@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Bkrmlxj from '@/components/Bkrmlxj';
 import HelloWorld from '@/components/HelloWorld'
 import IndexLunbo from '@/components/IndexLunbo'
+import Header from '@/components/Header'
 
 Vue.use(Router)
 
@@ -17,6 +18,11 @@ export default new Router({
       path: '/',
       name: 'IndexLunbo',
       component: IndexLunbo
+    },
+    {
+      path: '/header',
+      name: 'Header',
+      component: Header
     }
     
   ]
