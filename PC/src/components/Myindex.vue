@@ -1,144 +1,137 @@
 <template>
 
 	<div class="strategy">
+		<el-row :gutter="10">
+			<el-col :md="7" class="state_left">
+				<div class="grid-content bg-purple-light">
+						<h3 class="hd-title">旅游攻略推荐</h3>
+						<a href="" class="hd-right">更多</a>
+					</div>
+					<div class="tui">
+						<div class="state_img">
+							<img src="https://b1-q.mafengwo.net/s9/M00/26/F6/wKgBs1g-l0GAX2DFAAHb9eOlKn407.jpeg?imageMogr2%2Fthumbnail%2F%21260x139r%2Fgravity%2FCenter%2Fcrop%2F%21260x139%2Fquality%2F100" alt="">
+							<span class="mark">自由行攻略</span>
+						</div>
+					</div>
+					<div class="ping">
+						<ul>
+							<li>
+								<a href="">蚂蜂窝用 点评了&nbsp; </a>胡志明市的
+								<a href="">艾瑞斯酒店 I</a>
+							</li>
+							<li>
+								<a href="">蚂蜂窝用 点评了&nbsp; </a>胡志明市的
+								<a href="">艾瑞斯酒店 I</a>
+							</li>
+							<li>
+								<a href="">蚂蜂窝用 点评了&nbsp; </a>胡志明市的
+								<a href="">艾瑞斯酒店 I</a>
+							</li>
+							<li>
+								<a href="">蚂蜂窝用 点评了&nbsp; </a>胡志明市的
+								<a href="">艾瑞斯酒店 I</a>
+							</li>
 
-		<el-header>
-			<el-row :gutter="10">
-				<el-col :md="7" class="state_left">
-					<div class="grid-content bg-purple-light">
+							<li>
+								<a href="">蚂蜂窝用 点评了&nbsp; </a>胡志明市的
+								<a href="">艾瑞斯酒店 I</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="hd-box">
+						<h3 class="hd-title">
+							未知旅行实验室
+						</h3>
+						<a href="" class="hd-right">查看更多</a>
+					</div>
+					<div class="clear"></div>
+					<div class="block">
+						<el-carousel height="228px">
+							<el-carousel-item v-for="item in msg" :key="item.id">
+								<img :src="item.imgsrc" />
+								<div class="fontdiv">
+									<p>
+										<a>{{item.title}}</a>
+									</p>
+									<span>{{item.content}}</span>
+								</div>
+							</el-carousel-item>
+						</el-carousel>
+
 						<div class="hd-box">
-							<h3 class="hd-title">旅游攻略推荐</h3>
+							<h3 class="hd-title">最新活动</h3>
 							<a href="" class="hd-right">更多</a>
 						</div>
-						<div class="tui">
-							<div class="state_img">
-								<img src="https://b1-q.mafengwo.net/s9/M00/26/F6/wKgBs1g-l0GAX2DFAAHb9eOlKn407.jpeg?imageMogr2%2Fthumbnail%2F%21260x139r%2Fgravity%2FCenter%2Fcrop%2F%21260x139%2Fquality%2F100" alt="">
-								<span class="mark">自由行攻略</span>
-							</div>
+						<div class="state_img">
+							<img src="https://b1-q.mafengwo.net/s9/M00/26/F6/wKgBs1g-l0GAX2DFAAHb9eOlKn407.jpeg?imageMogr2%2Fthumbnail%2F%21260x139r%2Fgravity%2FCenter%2Fcrop%2F%21260x139%2Fquality%2F100" alt="">
+							<span class="mark">自由行攻略</span>
 						</div>
-						<div class="ping">
-							<ul>
-								<li>
-									<a href="">蚂蜂窝用 点评了&nbsp; </a>胡志明市的
-									<a href="">艾瑞斯酒店 I</a>
-								</li>
-								<li>
-									<a href="">蚂蜂窝用 点评了&nbsp; </a>胡志明市的
-									<a href="">艾瑞斯酒店 I</a>
-								</li>
-								<li>
-									<a href="">蚂蜂窝用 点评了&nbsp; </a>胡志明市的
-									<a href="">艾瑞斯酒店 I</a>
-								</li>
-								<li>
-									<a href="">蚂蜂窝用 点评了&nbsp; </a>胡志明市的
-									<a href="">艾瑞斯酒店 I</a>
-								</li>
-
-								<li>
-									<a href="">蚂蜂窝用 点评了&nbsp; </a>胡志明市的
-									<a href="">艾瑞斯酒店 I</a>
-								</li>
-							</ul>
-						</div>
-
-						<div class="hd-box">
-							<h3 class="hd-title">
-								未知旅行实验室
-							</h3>
-							<a href="" class="hd-right">查看更多</a>
-						</div>
-						<div class="clear"></div>
-						<div class="block">
-							<el-carousel height="228px">
-								<el-carousel-item v-for="item in msg" :key="item.id">
-									<img :src="item.imgsrc" />
-									<div class="fontdiv">
-										<p>
-											<a>{{item.title}}</a>
-										</p>
-										<span>{{item.content}}</span>
-									</div>
-								</el-carousel-item>
-							</el-carousel>
-
-							<div class="hd-box">
-								<h3 class="hd-title">最新活动</h3>
-								<a href="" class="hd-right">更多</a>
-							</div>
-							<div class="state_img">
-								<img src="https://b1-q.mafengwo.net/s9/M00/26/F6/wKgBs1g-l0GAX2DFAAHb9eOlKn407.jpeg?imageMogr2%2Fthumbnail%2F%21260x139r%2Fgravity%2FCenter%2Fcrop%2F%21260x139%2Fquality%2F100" alt="">
-								<span class="mark">自由行攻略</span>
-							</div>
-						</div>
-
 					</div>
+			</el-col>
+
+			<el-col :md="17" class="state_right">
+				<el-row class="border">
+					<el-col :md="7">
+					<div class="grid-content bg-purple">
+						<div class="hot">热门游记
+							<el-button type="warning" plain>筛选</el-button>
+						</div>
+					</div>
+
 				</el-col>
 
-				<el-col :md="17" class="state_right">
-					<el-row class="border">
-						<el-col :md="7">
-						<div class="grid-content bg-purple">
-							<div class="hot">热门游记
-								<el-button type="warning" plain>筛选</el-button>
-							</div>
-						</div>
-
-					</el-col>
-
-					<el-col :md="11">
-						<div class="grid-content bg-purple">
-							<a href=""> 最新发表</a>
-						</div>
-
-					</el-col>
-					<el-col :md="6" >
-						<div class="grid-content write">
-							<el-button type="warning">写游记</el-button>
-						</div>
-					</el-col>
-					</el-row>
-					
-					<el-col :md="24" >
-						<div class="grid-content" v-for="(item ,index) in arr1 " :key="index">
-							<div class="stra_img">
-								<img :src="item.url" alt="">
-							</div>
-
-							<div class="stra_cont">
-								<div>
-									<p class="cont_tit">
-										<a href="" target="_blank">{{item.title}}</a>
-									</p>
-									<p>
-										<a href="" target="_blank">{{item.content}}</a>
-									</p>
-								</div>
-								<div class="stra_xiao">
-									<span class="el-icon-location">{{item.location}}，by</span>
-									<span><img src="item.user_url" alt=""></span>
-									<span><a href="">{{item.user_name}}</a></span>
-
-									<span class="el-icon-view">{{item.contnum}}</span>
-								</div>
-							</div>
-							
-						</div>
-						<div class="fenye">
-							<div class="block1">
-							
-								<el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page.sync="currentPage1" :page-size="100" layout="total, prev, pager, next" :total="1000">
-								</el-pagination>
-							</div>
+				<el-col :md="11">
+					<div class="grid-content bg-purple">
+						<a href=""> 最新发表</a>
 					</div>
-					</el-col>
 
-					
+				</el-col>
+				<el-col :md="6" >
+					<div class="grid-content write">
+						<el-button type="warning">写游记</el-button>
+					</div>
+				</el-col>
+				</el-row>
+				
+				<el-col :md="24" >
+					<div class="grid-content" v-for="(item ,index) in arr1 " :key="index">
+						<div class="stra_img">
+							<img :src="item.url" alt="">
+						</div>
+
+						<div class="stra_cont">
+							<div>
+								<p class="cont_tit">
+									<a href="" target="_blank">{{item.title}}</a>
+								</p>
+								<p>
+									<a href="" target="_blank">{{item.content}}</a>
+								</p>
+							</div>
+							<div class="stra_xiao">
+								<span class="el-icon-location">{{item.location}}，by</span>
+								<span><img src="item.user_url" alt=""></span>
+								<span><a href="">{{item.user_name}}</a></span>
+
+								<span class="el-icon-view">{{item.contnum}}</span>
+							</div>
+						</div>
+						
+					</div>
+					<div class="fenye">
+						<div class="block1">
+						
+							<el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page.sync="currentPage1" :page-size="100" layout="total, prev, pager, next" :total="1000">
+							</el-pagination>
+						</div>
+				</div>
 				</el-col>
 
-			</el-row>
-		</el-header>
+				
+			</el-col>
 
+		</el-row>
 	</div>
 </template>
 
@@ -245,10 +238,10 @@
 	
 	.strategy {
 		width: 1000px;
-		margin: auto;
+		margin: 0px auto 0px;
 	}
-	.strategy .state_left{
-		
+	.strategy .state_left,.strategy .state_right {
+		margin-top: -60px;
 	}
 	.strategy .tui {
 		margin-top: 30px;

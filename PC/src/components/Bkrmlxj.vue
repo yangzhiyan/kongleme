@@ -26,14 +26,13 @@ export default {
     .bkrmlxj {
         height: 300px;
         width: 1000px;
-        margin: 0 auto;
+        margin: 20px auto 0px;
     }
     .bkrmlxj .lvxingjia {
         float: left;
         margin-right: 20px;
     }
     .bkrmlxj .remai {
-        margin: 16px 0px  0px;;
         float: left;
     }
 </style>
