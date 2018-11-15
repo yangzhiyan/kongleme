@@ -197,11 +197,11 @@
 	
 	.hotel-input {
 		float: left;
-		width: 260px;
+		width: 41%;
 	}
 	
 	.hotel-input .el-input {
-		width: 260px;
+		width:100%;
 		height: 46px;
 	}
 	
