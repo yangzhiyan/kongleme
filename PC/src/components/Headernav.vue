@@ -78,7 +78,7 @@
 
 <script>
 export default {
-  name: "header",
+  name: "Headernav",
   data() {
         return {
             seen1:false,

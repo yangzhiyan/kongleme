@@ -1,22 +1,33 @@
 <template>
-  <div class="lunbo">
-    <el-carousel :interval="5000" arrow="always" trigger="click" height="634px">
-      <el-carousel-item v-for="(item,index) in imgurl" :key="index">
-        <img :src="item.url" alt="">
-        <div class="date">
-          <span class="day">{{item.days}}</span><span>/Nov.2018</span>
-        </div>
-        <h3>{{item.words}}</h3>
-      </el-carousel-item>
-    </el-carousel>
-    <index-search></index-search>  
+  <div>
+    <div class="lunbo">
+      <el-carousel :interval="5000" arrow="always" trigger="click" height="634px">
+        <el-carousel-item v-for="(item,index) in imgurl" :key="index">
+          <img :src="item.url" alt="">
+          <div class="date">
+            <span class="day">{{item.days}}</span><span>/Nov.2018</span>
+          </div>
+          <h3>{{item.words}}</h3>
+        </el-carousel-item>
+      </el-carousel>
+      <index-search></index-search> 
+    </div>
+    <Bkrmlxj></Bkrmlxj>
+    <Myindex></Myindex>
   </div>
+  
 </template>
 <script>
 import IndexSearch from './IndexSearch.vue'
+import Bkrmlxj from './Bkrmlxj'
+import Myindex from './Myindex'
 export default {
   name: 'IndexLunbo',
-  components: {IndexSearch},
+  components: {
+    IndexSearch,
+    Bkrmlxj,
+    Myindex
+  },
   data () {
     return {
       imgurl:[{

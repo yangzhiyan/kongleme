@@ -1,19 +1,13 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Bkrmlxj from '@/components/Bkrmlxj';
-import HelloWorld from '@/components/HelloWorld'
 import IndexLunbo from '@/components/IndexLunbo'
-import Header from '@/components/Header'
+import Headernav from '@/components/Headernav'
 
 Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/rm',
-      name: 'Bkrmlxj',
-      component: Bkrmlxj
-    },
+    
     {
       path: '/',
       name: 'IndexLunbo',
@@ -21,8 +15,8 @@ export default new Router({
     },
     {
       path: '/header',
-      name: 'Header',
-      component: Header
+      name: 'Headernav',
+      component: Headernav
     }
     
   ]

@@ -46,7 +46,18 @@
 
         ]
       }),
-      name:'Baokuan'
+
+
+    // mounted:function(){
+    //   let _this = this;
+    //   _this.ajax.get(
+    //       'http://localhost:8080/getbaokuandata'
+    //   ).
+    //   then(function(res){
+    //       console.log(res);
+    //       _this.msg = res;
+    //   });
+    // }
    }
 </script>
 
@@ -70,7 +81,7 @@
   }
   .baokuan .bkcard {
       width: 220px;
-      height: 220px;
+      height: 330px;
       float: left;
       margin-left: 20px;
   }
@@ -79,12 +90,13 @@
   }
   .baokuan .bkcard h3 {
       height: 40px;
+      color: rgb(68, 67, 67);
       background-color: #fff;
       overflow: hidden;
       font-size: 14px;
-      position: relative;
-      top: -8px;
       font-weight: 100;
+      position: relative;
+      left:0px;
       z-index: 1000;
       line-height: 22px;
       text-align: left;

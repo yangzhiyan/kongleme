@@ -67,6 +67,7 @@
 <style>
   a{
     color: rgb(100, 98, 98);
+    text-decoration: none;
   }
   .tit {
     text-align: left;
@@ -77,7 +78,6 @@
     font-weight: 100;
     color: #333;
     padding: 0px 5px 14px;
-    padding: 0px;
   }
   .tit a {
     color: rgb(100, 98, 98);
@@ -98,8 +98,8 @@
   }
   .left-lunbo .el-carousel__indicators {
     position: relative;
-    top: -160px;
-    left: 190px;
+    top: -150px;
+    left: 270px;
   }
   .left-lunbo .fontdiv {
     text-align: left;
@@ -107,17 +107,20 @@
   .left-lunbo .fontdiv p {
     font-size: 16px;
     font-weight: 100;
-    position: relative;
-    top: -15px;
-    color:black;
+    padding: 6px 0px;
     text-align: left;
+  }
+  .left-lunbo .fontdiv p a {
+    color: black;
+  }
+  .left-lunbo .fontdiv p a:hover {
+    text-decoration: underline;
   }
   .left-lunbo .fontdiv span {
     height: 60px;
     line-height: 20px;
     font-size: 14px;
     overflow: hidden;
-    position: relative;
-    top: -30px;
+    color: rgb(68, 67, 67);
   }
 </style>
