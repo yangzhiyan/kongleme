@@ -99,7 +99,7 @@
 				this.flag[di] = true;
 			},
 			setdata() {
-				this.ajax.post('/indexsearch', this.ruleForm.name)
+				this.ajax.post('http://192.168.7.136:8888/indexsearch', this.ruleForm.name)
 					.then(function(response) {
 						console.log(response);
 					})
