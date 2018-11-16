@@ -34,7 +34,6 @@
 
 				</div>
 			</div>
-
 			<div class="block">
 				<el-date-picker v-model="value1" type="date" placeholder="未定">
 				</el-date-picker>
@@ -99,7 +98,7 @@
 				this.flag[di] = true;
 			},
 			setdata() {
-				this.ajax.post('/indexsearch', this.ruleForm.name)
+				this.ajax.post('http://192.168.7.136:8888/indexsearch', this.ruleForm.name)
 					.then(function(response) {
 						console.log(response);
 					})
@@ -204,7 +203,9 @@
 		width: 260px;
 		height: 46px;
 	}
-	
+	.search .block {
+		width: 140px;
+	}
 	.block .el-input__inner {
 		width: 140px;
 		height: 46px;

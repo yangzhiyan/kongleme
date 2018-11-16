@@ -1,137 +1,145 @@
 <template>
 
 	<div class="strategy">
-		<el-row :gutter="10">
-			<el-col :md="7" class="state_left">
-				<div class="grid-content bg-purple-light">
-						<h3 class="hd-title">旅游攻略推荐</h3>
-						<a href="" class="hd-right">更多</a>
-					</div>
-					<div class="tui">
-						<div class="state_img">
-							<img src="https://b1-q.mafengwo.net/s9/M00/26/F6/wKgBs1g-l0GAX2DFAAHb9eOlKn407.jpeg?imageMogr2%2Fthumbnail%2F%21260x139r%2Fgravity%2FCenter%2Fcrop%2F%21260x139%2Fquality%2F100" alt="">
-							<span class="mark">自由行攻略</span>
+			<el-row :gutter="10">
+				<el-col :md="7" class="state_left">
+					<div class="grid-content bg-purple-light">
+						<div class="hd-box">
+							<span id="hd-title">旅游攻略推荐</span>
+							<a href="" class="hd-right">更多></a>
 						</div>
-					</div>
-					<div class="ping">
-						<ul>
-							<li>
-								<a href="">蚂蜂窝用 点评了&nbsp; </a>胡志明市的
-								<a href="">艾瑞斯酒店 I</a>
-							</li>
-							<li>
-								<a href="">蚂蜂窝用 点评了&nbsp; </a>胡志明市的
-								<a href="">艾瑞斯酒店 I</a>
-							</li>
-							<li>
-								<a href="">蚂蜂窝用 点评了&nbsp; </a>胡志明市的
-								<a href="">艾瑞斯酒店 I</a>
-							</li>
-							<li>
-								<a href="">蚂蜂窝用 点评了&nbsp; </a>胡志明市的
-								<a href="">艾瑞斯酒店 I</a>
-							</li>
+						<div class="clear">
+							
+						</div>
+						<div class="tui">
+							<div class="state_img">
+								<img src="https://b1-q.mafengwo.net/s9/M00/26/F6/wKgBs1g-l0GAX2DFAAHb9eOlKn407.jpeg?imageMogr2%2Fthumbnail%2F%21260x139r%2Fgravity%2FCenter%2Fcrop%2F%21260x139%2Fquality%2F100" alt="">
+								<span class="mark">自由行攻略</span>
+							</div>
+						</div>
+						<div class="ping">
+							<ul class="pingcon">
+								<li>
+									<a href="" class="pinname" >李志兰  </a>点评了&nbsp;胡志明市的
+									<a href="" class="pincont">艾瑞斯酒店 I</a>
+								</li>
+								<li>
+									<a href="" class="pinname">Kelly </a>点评了&nbsp; 胡志明市的
+									<a href="" class="pincont">乡村小故事</a>
+								</li>
+								<li>
+									<a href="" class="pinname">石妙春</a>点评了&nbsp; 胡志明市的
+									<a href="" class="pincont">艾瑞斯酒店 I</a>
+								</li>
+								<li>
+									<a href="" class="pinname">小崽崽</a>点评了&nbsp; 胡志明市的
+									<a href="" class="pincont">路途之美景</a>
+								</li>
 
-							<li>
-								<a href="">蚂蜂窝用 点评了&nbsp; </a>胡志明市的
-								<a href="">艾瑞斯酒店 I</a>
-							</li>
-						</ul>
-					</div>
 
-					<div class="hd-box">
-						<h3 class="hd-title">
-							未知旅行实验室
-						</h3>
-						<a href="" class="hd-right">查看更多</a>
-					</div>
-					<div class="clear"></div>
-					<div class="block">
-						<el-carousel height="228px">
-							<el-carousel-item v-for="item in msg" :key="item.id">
-								<img :src="item.imgsrc" />
-								<div class="fontdiv">
-									<p>
-										<a>{{item.title}}</a>
-									</p>
-									<span>{{item.content}}</span>
-								</div>
-							</el-carousel-item>
-						</el-carousel>
+							</ul>
+						</div>
 
 						<div class="hd-box">
-							<h3 class="hd-title">最新活动</h3>
-							<a href="" class="hd-right">更多</a>
+							<span class="hd-title">
+								未知旅行实验室
+							</span>
+							<a href="" class="hd-right">查看更多></a>
 						</div>
-						<div class="state_img">
-							<img src="https://b1-q.mafengwo.net/s9/M00/26/F6/wKgBs1g-l0GAX2DFAAHb9eOlKn407.jpeg?imageMogr2%2Fthumbnail%2F%21260x139r%2Fgravity%2FCenter%2Fcrop%2F%21260x139%2Fquality%2F100" alt="">
-							<span class="mark">自由行攻略</span>
-						</div>
-					</div>
-			</el-col>
+						<div class="clear"></div>
+						<div class="block">
+							<el-carousel height="228px">
+								<el-carousel-item v-for="item in msg" :key="item.id">
+									<img :src="item.imgsrc" />
+									<div class="fontdiv">
+										<p>
+											<a >{{item.title}}</a>
+										</p>
+										<span>{{item.content}}</span>
+										
+									</div>
+								</el-carousel-item>
+							</el-carousel>
 
-			<el-col :md="17" class="state_right">
-				<el-row class="border">
-					<el-col :md="7">
-					<div class="grid-content bg-purple">
-						<div class="hot">热门游记
-							<el-button type="warning" plain>筛选</el-button>
-						</div>
-					</div>
-
-				</el-col>
-
-				<el-col :md="11">
-					<div class="grid-content bg-purple">
-						<a href=""> 最新发表</a>
-					</div>
-
-				</el-col>
-				<el-col :md="6" >
-					<div class="grid-content write">
-						<el-button type="warning">写游记</el-button>
-					</div>
-				</el-col>
-				</el-row>
-				
-				<el-col :md="24" >
-					<div class="grid-content" v-for="(item ,index) in arr1 " :key="index">
-						<div class="stra_img">
-							<img :src="item.url" alt="">
-						</div>
-
-						<div class="stra_cont">
-							<div>
-								<p class="cont_tit">
-									<a href="" target="_blank">{{item.title}}</a>
-								</p>
-								<p>
-									<a href="" target="_blank">{{item.content}}</a>
-								</p>
+							<div class="hd-box">
+								<span class="hd-title">最新活动</span>
+								<a href="" class="hd-right">更多></a>
 							</div>
-							<div class="stra_xiao">
-								<span class="el-icon-location">{{item.location}}，by</span>
-								<span><img src="item.user_url" alt=""></span>
-								<span><a href="">{{item.user_name}}</a></span>
-
-								<span class="el-icon-view">{{item.contnum}}</span>
+							<div class="state_img">
+								<img src="https://b1-q.mafengwo.net/s9/M00/26/F6/wKgBs1g-l0GAX2DFAAHb9eOlKn407.jpeg?imageMogr2%2Fthumbnail%2F%21260x139r%2Fgravity%2FCenter%2Fcrop%2F%21260x139%2Fquality%2F100" alt="">
+								<span class="mark">自由行攻略</span>
+							
 							</div>
 						</div>
-						
+
 					</div>
-					<div class="fenye">
-						<div class="block1">
-						
-							<el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page.sync="currentPage1" :page-size="100" layout="total, prev, pager, next" :total="1000">
-							</el-pagination>
-						</div>
-				</div>
 				</el-col>
 
-				
-			</el-col>
+				<el-col :md="17" class="state_right">
+					<el-row class="border">
+						<el-col :md="7">
+						<div class="grid-content bg-purple">
+							<div class="hot">热门游记&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								<el-button type="warning" plain>筛选</el-button>
+							</div>
+						</div>
 
-		</el-row>
+					</el-col>
+
+					<el-col :md="11">
+						<div class="grid-content bg-purple">
+							<a href="" class="announce"> 最新发表</a>
+						</div>
+
+					</el-col>
+					<el-col :md="6" >
+						<div class="grid-content write">
+							<el-button type="warning">写游记</el-button>
+						</div>
+					</el-col>
+					</el-row>
+					
+					<el-col :md="24" >
+						<div class="grid-content strategybox" v-for="(item ,index) in arr1 " :key="index">
+							<div class="stra_img">
+								<img :src="item.url" alt="">
+							</div>
+
+							<div class="stra_cont">
+								<div>
+									<p class="cont_tit">
+										<a href="" target="_blank">{{item.title}}</a>
+									</p>
+									<p>
+										<a href="" target="_blank" class="content">{{item.content}}</a>
+									</p>
+								</div>
+								<div class="stra_xiao">
+									<span class="el-icon-location">{{item.city}}，by&nbsp;</span>
+									<img :src="item.head_img" alt="">
+									<span><a href="">{{item.username}}</a></span>
+
+									<span class="el-icon-view">{{item.watchnums}}</span>
+										<span class="zan">赞:&nbsp;{{item.top_num}}</span>
+								</div>
+							</div>
+							
+						</div>
+						<div class="fenye">
+							<div class="block1">
+							
+								<el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page.sync="currentPage1" :page-size="100" layout="total, prev, pager, next" :total="1000">
+								</el-pagination>
+							</div>
+					</div>
+					</el-col>
+
+					
+				</el-col>
+
+			</el-row>
+
+
 	</div>
 </template>
 
@@ -143,58 +151,65 @@
       },
       handleCurrentChange(val) {
         console.log(`当前页: ${val}`);
-      }
+      },
+   
+    
     },
+    //   mounted(){
+    //   	var _this = this;
+    //   	this.ajax.get('http://localhost:8888/test')
+	// 				.then(function(response) {
+	// 					console.log(response);
+	// 					_this.arr1 = response.data;
+	// 				})
+	// 				.catch(function(error) {
+	// 					console.log(error);
+	// 				});
+    //   },
 		data() {
 			return {
-				title: [{
-						tit: "旅游攻略推荐",
-						qita: "更多"
-					},
-					{
-						tit: "旅游攻略推荐",
-						qita: "更多"
-					},
-				],
 				arr1: [{
 						url: "http://p1-q.mafengwo.net/s12/M00/99/B6/wKgED1vlgj6ASjH2AAityZ1Bmso32.jpeg?imageMogr2%2Fthumbnail%2F%21220x150r%2Fstrip%2Fgravity%2FCenter%2Fcrop%2F%21220x150%2Fquality%2F90",
 						title: "带着爸妈去旅行~日本游记",
 						content: "“ 南疆 之旅，其实就是一场从 天山 山脉奔向 昆仑山 脉，穿越茫茫草原、戈壁沙漠、雪山河谷，邂逅西域多民族古今历史人文之旅。” —— 新疆 自驾行• 南疆 段有感 新疆境内自驾行程（35天...",
-						location: "南疆",
-						user_url: "http://n3-q.mafengwo.net/s10/M00/CB/29/wKgBZ1kD_x2Ad-EcAABeidrCS-017.jpeg?imageMogr2%2Fthumbnail%2F%2116x16r%2Fgravity%2FCenter%2Fcrop%2F%2116x16%2Fquality%2F90",
-						user_name: "记得要微笑",
-						contnum: "222/79"
+						city: "南疆",
+						head_img: "http://n3-q.mafengwo.net/s10/M00/CB/29/wKgBZ1kD_x2Ad-EcAABeidrCS-017.jpeg?imageMogr2%2Fthumbnail%2F%2116x16r%2Fgravity%2FCenter%2Fcrop%2F%2116x16%2Fquality%2F90",
+						username: "记得要微笑",
+						watchnums: "222/79",
+						top_num:"45"
 					},
 					{
 						url: "http://b2-q.mafengwo.net/s12/M00/1C/88/wKgED1vlHN6AUeW3ABlgI8_UXco46.jpeg?imageMogr2%2Fthumbnail%2F%21220x150r%2Fstrip%2Fgravity%2FCenter%2Fcrop%2F%21220x150%2Fquality%2F90",
 						title: "带着爸妈去旅行~日本游记",
 						content: "“ 南疆 之旅，其实就是一场从 天山 山脉奔向 昆仑山 脉，穿越茫茫草原、戈壁沙漠、雪山河谷，邂逅西域多民族古今历史人文之旅。” —— 新疆 自驾行• 南疆 段有感 新疆境内自驾行程（35天...",
-						location: "南疆",
-						user_url: "http://n3-q.mafengwo.net/s10/M00/CB/29/wKgBZ1kD_x2Ad-EcAABeidrCS-017.jpeg?imageMogr2%2Fthumbnail%2F%2116x16r%2Fgravity%2FCenter%2Fcrop%2F%2116x16%2Fquality%2F90",
-						user_name: "记得要微笑",
-						contnum: "222/36"
+						city: "南疆",
+						head_img: "http://n3-q.mafengwo.net/s10/M00/CB/29/wKgBZ1kD_x2Ad-EcAABeidrCS-017.jpeg?imageMogr2%2Fthumbnail%2F%2116x16r%2Fgravity%2FCenter%2Fcrop%2F%2116x16%2Fquality%2F90",
+						username: "记得要微笑",
+						watchnums: "222/36",
+						top_num:"45"
 					},
 					{
 						url: "http://p1-q.mafengwo.net/s12/M00/99/B6/wKgED1vlgj6ASjH2AAityZ1Bmso32.jpeg?imageMogr2%2Fthumbnail%2F%21220x150r%2Fstrip%2Fgravity%2FCenter%2Fcrop%2F%21220x150%2Fquality%2F90",
 						title: "带着爸妈去旅行~日本游记",
 						content: "“ 南疆 之旅，其实就是一场从 天山 山脉奔向 昆仑山 脉，穿越茫茫草原、戈壁沙漠、雪山河谷，邂逅西域多民族古今历史人文之旅。” —— 新疆 自驾行• 南疆 段有感 新疆境内自驾行程（35天...",
-						location: "南疆",
-						user_url: "http://n3-q.mafengwo.net/s10/M00/CB/29/wKgBZ1kD_x2Ad-EcAABeidrCS-017.jpeg?imageMogr2%2Fthumbnail%2F%2116x16r%2Fgravity%2FCenter%2Fcrop%2F%2116x16%2Fquality%2F90",
-						user_name: "记得要微笑",
-						contnum: "222/26"
+						city: "南疆",
+						head_img: "http://n3-q.mafengwo.net/s10/M00/CB/29/wKgBZ1kD_x2Ad-EcAABeidrCS-017.jpeg?imageMogr2%2Fthumbnail%2F%2116x16r%2Fgravity%2FCenter%2Fcrop%2F%2116x16%2Fquality%2F90",
+						username: "记得要微笑",
+						watchnums: "222/26",
+						top_num:"45"
 					},
 				],
 				msg: [{
 						id: "01",
-						imgsrc: "https://n3-q.mafengwo.net/s12/M00/BE/E5/wKgED1vpDw2AFN5DAAGOmPCoPT482.jpeg",
-						title: "北京天文馆",
-						content: "我终于去了那个有着圆圆穹顶的老馆，当灯光全部黑下来的时候，整个穹顶完全就是一个夜空。"
+						imgsrc: "https://b1-q.mafengwo.net/s12/M00/10/F2/wKgED1vs82GAIP2QAAEjIAZ-_w412.jpeg",
+						title: "漫长的北非下午茶",
+						content: "这顿下午茶从5点一直喝到了晚上8点。瓦尔格拉的下午绝对比北京的要长。"
 					},
 					{
 						id: "02",
-						imgsrc: "https://n1-q.mafengwo.net/s12/M00/FF/52/wKgED1vk_2iAGNTLAAGTojx-lDg38.jpeg",
-						title: "小城莺歌",
-						content: "小城北面山坡上有一颗如鹦巨石，被称为“莺歌石”，莺歌因它而得名。"
+						imgsrc: "https://p4-q.mafengwo.net/s12/M00/37/7E/wKgED1vr2JmAWooxAAEb1neAnp861.jpeg",
+						title: "爱沙尼亚森林历险记",
+						content: "在现代城市中生活久了，人变得只想索取好的部分。走进森林，见日出的美，见森林的危险，这才是完整的森林之歌吧。。"
 					},
 					{
 						id: "03",
@@ -228,6 +243,7 @@
 <style>
 	* {
 		list-style-type: none;
+		text-decoration: none;
 		padding: 0px;
 		margin: 0px;
 	}
@@ -238,41 +254,49 @@
 	
 	.strategy {
 		width: 1000px;
-		margin: 0px auto 0px;
+		margin: auto;
+		position: relative;
 	}
 	.strategy .state_left,.strategy .state_right {
-		margin-top: -60px;
+		margin-top: -50px;
 	}
 	.strategy .tui {
 		margin-top: 30px;
 	}
 	
-	.hd-box {
-		height: 40px;
+	.strategy  .hd-box {
+		width: 263px;
+		height: 45px;
+		line-height: 45px;
 	}
+
 	
-	.grid-content {
-		float: left;
-	}
-	
-	.hd-title {
+	.strategy .hd-box #hd-title{
 		display: inline-block;
+		text-align: left;
 		float: left;
+		color: #333;
+		font-size: 16px;
+		font-weight: 600;
+		
+		
 	}
 	
-	.hd-right {
+	.strategy .hd-right {
 		float: right;
 		color: #999;
-		font-size: 12px;
+		font-size: 14px;
 		margin-top: 5px;
 		margin-right: 10px;
 	}
-	.write{
+	.strategy .write{
 		float: right;
+		height: 45px;
+		line-height: 45px;
 	}
-	.mark {
+	.strategy .mark {
 		position: absolute;
-		top: 57px;
+		top: 87px;
 		left: 8px;
 		padding: 0 6px;
 		color: #fff;
@@ -280,67 +304,103 @@
 		background-color: #ff6262;
 		font-size: 12px;
 	}
-	
-	.hot {
+	/*热门*/
+	.strategy .hot {
 		border-bottom: 3px solid #ff9d00;
 		height: 45px;
+		width: 180px;
+		line-height: 45px;
 		margin-bottom: 5px;
+		font-size: 18px;
+
 	}
-	
-	.tn-img {
-		float: left;
+	/*发表*/
+	.strategy .announce{
+		display:inline-block;
+		width: 100px;
+		line-height: 45px;
+		text-decoration: none;
+		color: #333;
+		font-size: 18px;
 	}
-	
-	.tn-right {
-		float: left;
+	.strategy .announce:hover{
+		color:#FF9D00;
 	}
-	
-	.stra_cont {
+	.strategy .strategybox{
+		margin-top: 10px;
+	}
+
+	.strategy .stra_cont {
 		float: right;
 		width: 425px;
 		height: 150px;
 		text-align: left;
 		margin-left: 20px;
-		margin-bottom: 30px;
-		font-size: 12px;
+		margin-bottom: 28px;
+		font-size: 14px;
 	}
 	
-	.stra_cont a {
+	.strategy .stra_cont .content {
+		display: inline-block;
 		text-decoration: none;
 		text-align: left;
 		color: #333;
+		width: 435px;
+		height: 80px;
+		font-size: 14px;
+		margin-top: 10px;
 	}
 	
-	.stra_img {
+	.strategy .stra_img img{
 		float: left;
 		width: 220px;
 		height: 150px;
+		margin-bottom: 28px;
 	}
 	
-	.stra_xiao {
+	.strategy .stra_xiao {
 		font-size: 12px;
 		color: #333;
 	}
-	
-	.cont_tit {
-		font-size: 14px;
+	.strategy .stra_xiao span{
+		display: inline-block;
+		width: 90px;
+		height: 40px;
+		line-height: 45px;
+	}
+	.strategy .cont_tit {
+		font-size: 18px;
 		list-style: none;
 	}
+	.strategy .cont_tit a:hover {
+		color: #ff9d00;
+	}
+	
 	/* /点评/ */
 	
-	.ping {
+	.strategy .ping {
 		text-align: left;
 		font-size: 14px;
 		color: #333;
 		margin: 30px 0px;
 		height: 110px;
+	
 	}
-	ping li{
+	.strategy .ping	.pinname,.pincont{
+		color: #FF9D00;
+		font-size: 16px;
+	}
+	.strategy .ping	.pinname:hover,.pincont:hover{
+		text-decoration: underline;
+	}
+	.strategy .ping li {
+	display: inline-block;
 	width: 260px;
     height: 28px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+   
 	}
 	/* /轮播/  */
 	
@@ -356,8 +416,8 @@
 	
 	.el-carousel__indicators {
 		position: relative;
-		top: -152px;
-		left: 187px;
+		top: -120px;
+		left: 270px;
 	}
 	
 	.fontdiv {

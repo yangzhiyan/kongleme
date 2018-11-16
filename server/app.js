@@ -1,6 +1,7 @@
 var express = require("express");
 var app = new express();
 var mysql = require("mysql");
+var bodyParser=require('body-parser');
 
 app.all('*', function (req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
@@ -9,12 +10,11 @@ app.all('*', function (req, res, next) {
   res.header('Content-Type', 'application/json;charset=utf-8');
   next();
 });
-app.post("/indexsearch",function(req,res){
-	res.send("6666");
-});
+app.use(bodyParser.urlencoded({ extended: false }))  //qs  querystring
+app.use(bodyParser.json());
 app.get("/test",function(req,res){
 	let connect = cntmysql();
-	let sqlQuery="select * from users";
+	let sqlQuery="select * from strategy,users where strategy.userid = users.userid";
 	connect.query(sqlQuery,function(err,result){
     	if(err){
        	 	console.log(`SQL error: ${err}!`);
@@ -25,19 +25,34 @@ app.get("/test",function(req,res){
     	}
 	});
 });
-app.get("",function(req,res){
+app.get("/test2",function(req,res){
 	let connect = cntmysql();
-	let aqlQuery="select * from users";
-	connect.query(sqlQuery,function(err,res){
+  let sqlQuery="select * from shop where shid<=3";
+	connect.query(sqlQuery,function(err,res1){
 		if(err){
 			console.log(`SQL error: ${err}!`);
 		}else{
-			console.log(result);
-       		res.send(result);
+			console.log(res1);
+       		res.send(res1);
         	closeMysql(connect);
 		}
 	})
 })
+
+app.post("/register",(req,res)=>{
+  console.log(req.body);
+  let connect = cntmysql();
+  let mysql1 = `INSERT INTO users(userid,username,passwd,regtime)VALUES(${req.body.userid},${req.body.username},${req.body.passwd},${new Date()})`;
+  connect.query(mysql1,(err)=>{
+    if(err){
+      console.log(`SQL error: ${err}!`);
+    }else{
+      console.log("写入成功");
+      closeMysql(connect);
+    }
+  })
+})
+  
 //查询成功后关闭mysql
 function closeMysql(connect){
     connect.end((err)=>{
@@ -56,7 +71,7 @@ function cntmysql(){
     	user:"root",
     	password:"root",
     	port:"3306",
-    	database:"cat" 
+    	database:"kongleme" 
 	}
 	let connect=mysql.createConnection(db_config);
 	//开始链接数据库
