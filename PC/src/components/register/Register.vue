@@ -2,14 +2,14 @@
   <div class="register" :style="{height: regWid}">
     <div class="content">
       <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
-        <el-form-item label="电话号码：" prop="phone">
-          <el-input v-model="ruleForm2.phone"></el-input>
+        <el-form-item label="电话号码：" prop="userid">
+          <el-input v-model="ruleForm2.userid"></el-input>
         </el-form-item>
          <el-form-item label="用户名：" prop="username">
           <el-input v-model="ruleForm2.username"></el-input>
         </el-form-item>
-        <el-form-item label="密码：" prop="pass">
-          <el-input type="password" v-model="ruleForm2.pass" autocomplete="off"></el-input>
+        <el-form-item label="密码：" prop="passwd">
+          <el-input type="password" v-model="ruleForm2.passwd" autocomplete="off"></el-input>
         </el-form-item>
         <el-form-item label="确认密码：" prop="checkPass">
           <el-input type="password" v-model="ruleForm2.checkPass" autocomplete="off"></el-input>
@@ -61,7 +61,7 @@ export default {
     var validatePass2 = (rule, value, callback) => {
       if (value === '') {
         callback(new Error('请再次输入密码'));
-      } else if (value !== this.ruleForm2.pass) {
+      } else if (value !== this.ruleForm2.passwd) {
         callback(new Error('两次输入密码不一致!'));
       } else {
         callback();
@@ -71,29 +71,24 @@ export default {
       regWid:"",
       msg: [],
       ruleForm2: {
-        pass: '',
+        passwd: '',
         checkPass: '',
-        phone:'',
+        userid:'',
         username:''
       },
       rules2: {
-        pass: [
+        passwd: [
           { validator: validatePass, trigger: 'blur' }
         ],
         checkPass: [
           { validator: validatePass2, trigger: 'blur' }
         ],
-        phone:[
+        userid:[
           {validator: checkPhone, trigger: 'blur'}
         ],
         username:[
           {validator: checkUsername, trigger: 'blur'}
         ]
-      },
-      submitData:{
-        pass: '',
-        phone:'',
-        username:''
       }
     };
   },
@@ -115,7 +110,7 @@ export default {
           // post请求
           // axios.post(
           //   "http:localhost:8888/register",
-          //    _this.regformdata)
+          //    _this.ruleForm2)
           // .then(function (response) {
           //   console.log(response);
           // })
