@@ -104,19 +104,18 @@ export default {
       this.$refs[formName].validate((valid,myobj) => {
         // 如果验证成功，即valid为true，就提交表单，否则，返回错误
         if (valid) {
-          alert('submit!');
           // 要发送到后台的请求的数据
-          console.log(_this.submitData);
-          // post请求
-          // axios.post(
-          //   "http:localhost:8888/register",
-          //    _this.ruleForm2)
-          // .then(function (response) {
-          //   console.log(response);
-          // })
-          // .catch(function (error) {
-          //   console.log(error);
-          // });
+          console.log(_this.ruleForm2);
+          //post请求
+          _this.ajax.post(
+            "http://localhost:8888/register",
+             _this.ruleForm2)
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
         } else {
           console.log('error submit!!');
           return false;

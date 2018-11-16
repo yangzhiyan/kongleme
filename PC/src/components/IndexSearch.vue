@@ -34,7 +34,6 @@
 
 				</div>
 			</div>
-
 			<div class="block">
 				<el-date-picker v-model="value1" type="date" placeholder="未定">
 				</el-date-picker>
@@ -197,14 +196,16 @@
 	
 	.hotel-input {
 		float: left;
-		width: 41%;
+		width: 260px;
 	}
 	
 	.hotel-input .el-input {
-		width:100%;
+		width: 260px;
 		height: 46px;
 	}
-	
+	.search .block {
+		width: 140px;
+	}
 	.block .el-input__inner {
 		width: 140px;
 		height: 46px;
