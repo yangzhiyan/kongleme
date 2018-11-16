@@ -103,19 +103,23 @@ export default {
 a{
     text-decoration: none;
 }
+.is-opened {
+    position: relative;
+    top: -6px;
+}
 .header{
     width: 1000px;
-    height: 58px;
+    height: 60px;
     margin: 0 auto;
 
 }
-.header-title{
+.header .header-title{
     float: left;
     width: 136px;
     height: 36px;
     padding: 16px 0px 6px 0px;
 }
-.header-icon{
+.header .header-icon{
     display: inline-block;
     width: 120px;
     height: 36px;
@@ -127,7 +131,10 @@ a{
     float: left;
     width: 600px;
 }
-
+.el-carousel__item {
+    position: fixed;
+    z-index: 1000;
+}
 .header-login{
     width: 185px;
     height: 26px;
@@ -204,10 +211,9 @@ a{
     border-bottom: 3px solid #ff9d00 !important;
 }
 .nav-over:hover{
-    border-top: 2px solid #ff9d00 !important;
+    /* border-top: 2px solid #ff9d00 !important; */
     border-left: 1px solid gainsboro;
-    border-right: 1px solid gainsboro;
-    
+    border-right: 1px solid gainsboro;    
 }
 .nav-over a:hover{
     color: #ff9d00 !important;
@@ -218,7 +224,7 @@ a{
     float: right;
     width: 220px;
     height: 58px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 .header-img{
     width: 32px;

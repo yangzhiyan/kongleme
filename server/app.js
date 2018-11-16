@@ -27,9 +27,9 @@ app.get("/test",function(req,res){
     	}
 	});
 });
-app.get("",function(req,res){
+app.get("/test2",function(req,res){
 	let connect = cntmysql();
-	let aqlQuery="select * from strategy where 1";
+  let sqlQuery="select * from shop where shid<=3";
 	connect.query(sqlQuery,function(err,res){
 		if(err){
 			console.log(`SQL error: ${err}!`);
