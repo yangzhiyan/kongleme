@@ -155,20 +155,20 @@
    
     
     },
-      mounted(){
-      	var _this = this;
-      	this.ajax.get('http://localhost:8888/test')
-					.then(function(response) {
-						console.log(response);
-						_this.arr1 = response.data;
-					})
-					.catch(function(error) {
-						console.log(error);
-					});
-      },
+    //   mounted(){
+    //   	var _this = this;
+    //   	this.ajax.get('http://localhost:8888/test')
+	// 				.then(function(response) {
+	// 					console.log(response);
+	// 					_this.arr1 = response.data;
+	// 				})
+	// 				.catch(function(error) {
+	// 					console.log(error);
+	// 				});
+    //   },
 		data() {
 			return {
-				arr1: [/*{
+				arr1: [{
 						url: "http://p1-q.mafengwo.net/s12/M00/99/B6/wKgED1vlgj6ASjH2AAityZ1Bmso32.jpeg?imageMogr2%2Fthumbnail%2F%21220x150r%2Fstrip%2Fgravity%2FCenter%2Fcrop%2F%21220x150%2Fquality%2F90",
 						title: "带着爸妈去旅行~日本游记",
 						content: "“ 南疆 之旅，其实就是一场从 天山 山脉奔向 昆仑山 脉，穿越茫茫草原、戈壁沙漠、雪山河谷，邂逅西域多民族古今历史人文之旅。” —— 新疆 自驾行• 南疆 段有感 新疆境内自驾行程（35天...",
@@ -197,7 +197,7 @@
 						username: "记得要微笑",
 						watchnums: "222/26",
 						top_num:"45"
-					},*/
+					},
 				],
 				msg: [{
 						id: "01",
