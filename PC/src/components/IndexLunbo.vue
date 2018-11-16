@@ -1,5 +1,6 @@
 <template>
   <div>
+    <headernav></headernav>
     <div class="lunbo">
       <el-carousel :interval="5000" arrow="always" trigger="click" height="634px">
         <el-carousel-item v-for="(item,index) in imgurl" :key="index">
@@ -12,8 +13,8 @@
       </el-carousel>
       <index-search></index-search> 
     </div>
-    <Bkrmlxj></Bkrmlxj>
-    <Myindex></Myindex>
+    <bkrmlxj></bkrmlxj>
+    <myindex></myindex>
   </div>
   
 </template>
@@ -21,12 +22,14 @@
 import IndexSearch from './IndexSearch.vue'
 import Bkrmlxj from './Bkrmlxj'
 import Myindex from './Myindex'
+import Headernav from './Headernav'
 export default {
   name: 'IndexLunbo',
   components: {
     IndexSearch,
     Bkrmlxj,
-    Myindex
+    Myindex,
+    Headernav
   },
   data () {
     return {
@@ -62,6 +65,7 @@ export default {
 <style>
   .lunbo{
     position: relative;
+    /* top:50px; */
   }
   .lunbo .el-carousel__indicators{
     position: absolute;

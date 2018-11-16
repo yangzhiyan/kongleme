@@ -14,20 +14,22 @@ app.post("/indexsearch",function(req,res){
 });
 app.get("/test",function(req,res){
 	let connect = cntmysql();
-	let sqlQuery="select * from users";
+	let sqlQuery="select * from strategy,users where strategy.userid = users.userid";
 	connect.query(sqlQuery,function(err,result){
     	if(err){
        	 	console.log(`SQL error: ${err}!`);
     	}else{
        		console.log(result);
+       		
        		res.send(result);
+       		
         	closeMysql(connect);
     	}
 	});
 });
-app.get("",function(req,res){
+app.get("/test2",function(req,res){
 	let connect = cntmysql();
-	let aqlQuery="select * from users";
+  let sqlQuery="select * from shop where shid<=3";
 	connect.query(sqlQuery,function(err,res){
 		if(err){
 			console.log(`SQL error: ${err}!`);
@@ -56,7 +58,7 @@ function cntmysql(){
     	user:"root",
     	password:"root",
     	port:"3306",
-    	database:"cat" 
+    	database:"travel" 
 	}
 	let connect=mysql.createConnection(db_config);
 	//开始链接数据库
