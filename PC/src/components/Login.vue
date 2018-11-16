@@ -1,52 +1,51 @@
 <template>
-  <div class="login">
-    <div class="backimg" :style="{width:height.width,height:height.height}">
-      
-    </div>
-    <div class="logo">
-      <a href="javascript:void(0)" title="" class="logoimg"></a>
-    </div>
-    <div class="login-box">
-      <div class="login-inner">
-        <div class="login-left">
-          <div class="login-input">
-            <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
-              <el-form-item label="" prop="userid">
-                <el-input v-model.number="ruleForm2.userid" placeholder = "您的邮箱/手机号"></el-input>
-              </el-form-item>
-              <el-form-item label="" prop="passwd">
-                <el-input type="password" v-model="ruleForm2.passwd" placeholder= "您的密码"></el-input>
-              </el-form-item>
-              <el-form-item>
-                <el-button type="primary" @click="submitForm('ruleForm2')">登录</el-button>
-              </el-form-item>
-            </el-form> 
-          </div>
-          <div class="connect">
-            <p>用合作网站账户直接登录</p>
-            <div class="hzzh">
-              <a href="" class="weibo">
-                <i></i>
-                <span>新浪微博</span>
-              </a>
-              <a href="" class="qq">
-                <i></i>
-                <span>QQ</span>
-              </a>
-              <a href="" class="weixin">
-                <i></i>
-                <span>微信</span>
-              </a>
-            </div>
-          </div> 
-        </div> 
-        <div class="login-right">    
-        </div>
-        <div class="clear"></div>
+  <div class="login"  :style="{width:height.width,height:height.height}">
+    <div class="logindiv">
+      <div class="logo">
+        <a href="javascript:void(0)" title="" class="logoimg"></a>
       </div>
-    </div>  
+      <div class="login-box">
+        <div class="login-inner">
+          <div class="login-left">
+            <div class="login-input">
+              <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
+                <el-form-item label="" prop="userid">
+                  <el-input v-model.number="ruleForm2.userid" placeholder = "您的手机号"></el-input>
+                </el-form-item>
+                <el-form-item label="" prop="passwd">
+                  <el-input type="password" v-model="ruleForm2.passwd" placeholder= "您的密码"></el-input>
+                </el-form-item>
+                <el-form-item>
+                  <el-button type="primary" @click="submitForm('ruleForm2')">登录</el-button>
+                </el-form-item>
+              </el-form> 
+            </div>
+            <div class="connect">
+              <p>用合作网站账户直接登录</p>
+              <div class="hzzh">
+                <a href="" class="weibo">
+                  <i></i>
+                  <span>新浪微博</span>
+                </a>
+                <a href="" class="qq">
+                  <i></i>
+                  <span>QQ</span>
+                </a>
+                <a href="" class="weixin">
+                  <i></i>
+                  <span>微信</span>
+                </a>
+              </div>
+            </div> 
+          </div> 
+          <div class="login-right">    
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div> 
+    </div>
+     
   </div>
-</div>
 </template>
 <script>
   export default {
@@ -54,9 +53,7 @@
     data() {
       var validatePass = (rule, value, callback) => {
         if (value === '') {
-          callback(new Error('请设置正确格式的密码'));
-        } else if(value.length < 8){
-          callback(new Error('密码长度最小8位'));
+          callback(new Error('请输入密码'));
         }else{
           callback();
         }
@@ -96,8 +93,8 @@
       };
     },
     mounted(){
-      this.height.height=window.innerHeight+'px';
-      this.height.width = window.innerWidth+"px";
+      this.height.height=document.documentElement.clientHeight+"px";
+      this.height.width = document.documentElement.clientWidth+"px";
     },
     methods: {
       submitForm(formName) {
@@ -114,14 +111,30 @@
   }
 </script>
 <style>
+  .login {
+    position: relative;
+    background-image: url("../../static/img/regback1.png");
+    overflow: hidden;
+  }
   .logoimg {
-    width: 75px;
-    height: 90px;
+    width: 150px;
+    height: 120px;
+    position: relative;
+    left: 50px;
     display: block;
     text-indent: -999px;
     overflow: hidden;
     background: url("../../static/img/logo-new.png") no-repeat;
-    margin: 0 auto;
+    background-position: -40px 10px;
+    background-size: 100% 100%;
+    margin: 10px auto;
+  }
+  .logindiv {
+    width: 700px;
+    height: 500px;
+    /* background-color: rgba(255,168,0,0.8); */
+    padding: 20px 0px;
+    margin: 0px auto;
   }
   .logo {
     width: 600px;
@@ -129,12 +142,13 @@
   .login-box {
     width: 600px;
     background-color: #fff;
+    margin: 0 auto;
+    border-radius: 30px;
   }
   .login-inner {
     width: 600px;
     padding-top: 26px;
     background-color: #fff;
-    border-radius: 5px;
     box-shadow: 0 3px 3px rgba(0,0,0,.4);
   }
   .login-left {
@@ -147,7 +161,7 @@
     height: 42px;
     border: 0;
     background-color: #ffa800;
-    border-radius: 5px;
+    border-radius: 30px;
     color: #fff;
     font-size: 18px;
     font-weight: bold;
@@ -203,13 +217,6 @@
     height: 300px;
     padding-top: 20px
   }
-  .login {
 
-  }
-  .backimg {
-    position: fixed;
-    left: 0;
-    top: 0;
-    background-color: red;
-  }
+  
 </style>
