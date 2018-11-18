@@ -42,9 +42,13 @@
               <li class="h-r"><a class="icon3 icon-sina i-right" href=""></a></li>
               <li class="h-r"><a class="icon3 icon-qq i-right" href=""></a></li>
               <li class="h-r"><a class="icon3 icon-wx i-right" href=""></a></li>
-              <li class="h-r"><a class="log-reg login gang i-right" href="">登录</a></li>
+              <li class="h-r">
+                <router-link to='/login' class='log-reg login gang i-right'>登录</router-link>
+                </li>
               <li class="h-r gang gang-1">|</li>
-              <li class="h-r"><a class="log-reg regist gang i-right" href="">注册</a></li>
+              <li class="h-r">
+              <router-link to='/reg' class='log-reg regist gang i-right'>注册</router-link>
+                </li>
           </ul>
       </div>
 
@@ -81,8 +85,8 @@ export default {
   name: "Headernav",
   data() {
         return {
-            seen1:false,
-            seen2:true,
+            seen1:true,
+            seen2:false,
             activeIndex: "1"
         };
   },

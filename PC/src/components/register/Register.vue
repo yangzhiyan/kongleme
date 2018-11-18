@@ -105,7 +105,7 @@ export default {
         // 如果验证成功，即valid为true，就提交表单，否则，返回错误
         if (valid) {
           // 要发送到后台的请求的数据
-          console.log(_this.ruleForm2);
+         // console.log(_this.ruleForm2);
           //post请求
           _this.ajax.post(
             "http://localhost:8888/register",
@@ -138,8 +138,9 @@ export default {
 .register {
   position: relative;
   width: 100%;
-  background-image: url("../../../static/img/regback2.png")
-
+  background-image: url("../../../static/img/regback2.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 .register .content {
   width: 40%;

@@ -1,6 +1,6 @@
 <template>
-  <div class="login"  :style="{width:height.width,height:height.height}">
-    <div class="logindiv">
+  <div class="loginmodul"  :style="{width:height.width,height:height.height}">
+    <div class="logindiv" :style="{marginTop:height.auto}">
       <div class="logo">
         <a href="javascript:void(0)" title="" class="logoimg"></a>
       </div>
@@ -59,7 +59,6 @@
         }
       };
       var checkPhone = (rule, value, callback) => {
-        console.log(value)
         if (value === '') {
           callback(new Error('手机号不能为空'));
         } else {
@@ -88,19 +87,28 @@
         },
         height:{
           height:"",
-          width:""
+          width:"",
+          auto:"",
         }
       };
     },
     mounted(){
       this.height.height=document.documentElement.clientHeight+"px";
       this.height.width = document.documentElement.clientWidth+"px";
+      this.height.auto = document.documentElement.clientHeight/2-300+"px";
     },
     methods: {
       submitForm(formName) {
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            alert('submit!');
+            console.log(666)
+            this.ajax.post('http://localhost:8888/login', this.ruleForm2)
+            .then(function (response) {
+              console.log(response);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
           } else {
             console.log('error submit!!');
             return false;
@@ -111,9 +119,11 @@
   }
 </script>
 <style>
-  .login {
+  .loginmodul {
     position: relative;
     background-image: url("../../static/img/regback1.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     overflow: hidden;
   }
   .logoimg {
@@ -134,7 +144,7 @@
     height: 500px;
     /* background-color: rgba(255,168,0,0.8); */
     padding: 20px 0px;
-    margin: 0px auto;
+    margin: 300px auto;
   }
   .logo {
     width: 600px;
