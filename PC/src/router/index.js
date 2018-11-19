@@ -7,7 +7,7 @@ import Footer1 from '@/components/Footer1'
 import Next from '@/components/Next'
 import Login from '@/components/Login'
 import Register from '@/components/register/Register'
-
+import Dangdiyou from '@/components/Dangdiyou/Dangdiyou'
 Vue.use(Router)
 
 export default new Router({
@@ -23,6 +23,16 @@ export default new Router({
       path: '/header',
       name: 'Headernav',
       component: Headernav
+    },
+    {
+    	path:'/localdeals',
+    	name:'Dangdiyou',
+    	component:Dangdiyou
+    },
+    {
+    	path:'/gonglve',
+    	name:'Next',
+    	component:Next
     },
     {
       path: '/ft',

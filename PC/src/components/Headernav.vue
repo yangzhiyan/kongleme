@@ -16,13 +16,13 @@
 
             <el-menu-item index="2" class="nav-under"><a href="/#/target" >目的地</a></el-menu-item>
 
-            <el-menu-item index="3" class="nav-under"><a href="/#/next">旅游攻略</a></el-menu-item>
+            <el-menu-item index="3" class="nav-under"><router-link to='/gonglve' class='router'>旅游攻略</router-link></el-menu-item>
 
             <el-submenu index="4" class="nav-over">
             <template slot="title"><a href="https://www.ele.me" >旅行商城</a></template>
             <el-menu-item index="4-1">自由行</el-menu-item>
             <el-menu-item index="4-2">跟团游</el-menu-item>
-            <el-menu-item index="4-3">当地游</el-menu-item>
+            <el-menu-item index="4-3"><router-link to='/localdeals' class='router'>当地游</router-link></el-menu-item>
             <el-menu-item index="4-4">国内机票</el-menu-item>
             <el-menu-item index="4-4">签证</el-menu-item>
             <el-menu-item index="4-4">保险</el-menu-item>
@@ -119,6 +119,9 @@ export default {
 }
 a{
     text-decoration: none;
+}
+.router{
+    color: #909399;
 }
 .is-opened {
     position: relative;
