@@ -7,6 +7,7 @@
       <div class="login-box">
         <div class="login-inner">
           <div class="login-left">
+            <span class="log-err">{{logErr}}</span>
             <div class="login-input">
               <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
                 <el-form-item label="" prop="userid">
@@ -73,6 +74,7 @@
       };
       
       return {
+        logErr:"",
         ruleForm2: {
           userid: '',
           passwd: ''
@@ -99,12 +101,27 @@
     },
     methods: {
       submitForm(formName) {
+        var _this = this;
+         _this.logErr = "";
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            console.log(666)
             this.ajax.post('http://localhost:8888/login', this.ruleForm2)
             .then(function (response) {
-              console.log(response);
+              console.log(response.data);
+              var status = response.data;
+              if(status==0){
+                _this.logErr = "用户名错误"
+                console.log("用户名错误");
+              }else if(status == 1){
+                // window.location.href = "/#/"
+                const userid = _this.ruleForm2.userid;
+                const vlogin = true;
+                _this.$router.push({ name: 'IndexLunbo', params: { userid,vlogin }});
+                console.log("登录成功");
+              }else if(status == 2){
+                 _this.logErr = "密码错误";
+                console.log("密码错误");
+              }
             })
             .catch(function (error) {
               console.log(error);
@@ -139,6 +156,14 @@
     background-size: 100% 100%;
     margin: 10px auto;
   }
+  .log-err {
+    color: #f56c6c;
+    position: relative;
+    font-size: 14px;
+    top: -2px;
+    left: 20px;
+  }
+
   .logindiv {
     width: 700px;
     height: 500px;

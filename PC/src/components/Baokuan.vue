@@ -54,7 +54,7 @@
           'http://localhost:8888/test2'
       ).
       then(function(res){
-          console.log(res);
+        //   console.log(res);
           _this.msg = res.data;
       });
     }
