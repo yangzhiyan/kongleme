@@ -1,6 +1,7 @@
 <template>
   <div class="register" :style="{height: regWid}">
     <div class="content">
+       <span class="reg-err">{{regErr}} <a href="/#/login" v-if="showlogin">请登录</a></span>
       <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
         <el-form-item label="电话号码：" prop="userid">
           <el-input v-model="ruleForm2.userid"></el-input>
@@ -17,7 +18,7 @@
         <el-form-item>
           <el-button type="primary" @click="submitForm('ruleForm2')">提交</el-button>
           <el-button @click="resetForm('ruleForm2')">重置</el-button>
-          <span class="login">已经注册？<a href="#">马上登陆</a></span>
+          <span class="login">已经注册？<a href="/#/login">马上登陆</a></span>
         </el-form-item>
       </el-form>
     </div>
@@ -68,7 +69,9 @@ export default {
       }
     };
     return {
+      regErr:'',
       regWid:"",
+      showlogin:false,
       msg: [],
       ruleForm2: {
         passwd: '',
@@ -100,18 +103,28 @@ export default {
   methods: {
     submitForm(formName) {
       let _this=this;
+      _this.regErr = "";
       // console.log(this.ruleForm2.phone)
       this.$refs[formName].validate((valid,myobj) => {
         // 如果验证成功，即valid为true，就提交表单，否则，返回错误
         if (valid) {
           // 要发送到后台的请求的数据
-          console.log(_this.ruleForm2);
+         // console.log(_this.ruleForm2);
           //post请求
           _this.ajax.post(
             "http://localhost:8888/register",
              _this.ruleForm2)
           .then(function (response) {
             console.log(response);
+            var status = response.data;
+            if(status == 0){
+              _this.regErr = "该账号已被注册 ";
+              _this.showlogin = true;
+              console.log("已有该账号");
+            }else if(status == 1){
+              console.log("注册成功");
+              window.location.href = "/#/login";
+            }
           })
           .catch(function (error) {
             console.log(error);
@@ -138,8 +151,24 @@ export default {
 .register {
   position: relative;
   width: 100%;
-  background-image: url("../../../static/img/regback2.png")
-
+  background-image: url("../../../static/img/regback2.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.register .reg-err {
+  color: #f56c6c;
+  font-size: 14px;
+  position: relative;
+  top: 16px;
+  left: 100px;
+}
+.register .reg-err a {
+  color: #f56c6c;
+  font-weight: 500;
+  text-decoration: none;
+}
+.register .reg-err a:hover {
+  text-decoration: underline;
 }
 .register .content {
   width: 40%;

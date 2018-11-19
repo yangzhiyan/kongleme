@@ -1,6 +1,7 @@
 <template>
   <div>
-    <headernav></headernav>
+    <!--{{this.$route.params.userId}}-->
+    <headernav :userid='userid' :vlogin='vlogin'></headernav>
     <div class="lunbo">
       <el-carousel :interval="5000" arrow="always" trigger="click" height="634px">
         <el-carousel-item v-for="(item,index) in imgurl" :key="index">
@@ -15,6 +16,7 @@
     </div>
     <bkrmlxj></bkrmlxj>
     <myindex></myindex>
+    <footer1></footer1>
   </div>
   
 </template>
@@ -23,16 +25,20 @@ import IndexSearch from './IndexSearch.vue'
 import Bkrmlxj from './Bkrmlxj'
 import Myindex from './Myindex'
 import Headernav from './Headernav'
+import Footer1 from './Footer1'
 export default {
   name: 'IndexLunbo',
   components: {
     IndexSearch,
     Bkrmlxj,
     Myindex,
-    Headernav
+    Headernav,
+    Footer1
   },
   data () {
     return {
+      vlogin:"",
+      userid:"",
       imgurl:[{
                 url:'../../static/img/IndexLunbo1.jpg',
                 days:14,
@@ -59,6 +65,11 @@ export default {
                 words:"与墨西哥有关的100个记忆（我的墨西哥彩色印象集）"
               }]
     }
+    
+  },
+  updated: function () {
+    this.vlogin = this.$route.params.vlogin;
+    this.userid = this.$route.params.userid
   }
 }
 </script>

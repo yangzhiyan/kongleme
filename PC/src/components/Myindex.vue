@@ -128,47 +128,50 @@
 						<div class="fenye">
 							<div class="block1">
 							
-								<el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page.sync="currentPage1" :page-size="100" layout="total, prev, pager, next" :total="1000">
+								<el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page.sync="currentPage1" :page-size="10" layout="total, prev, pager, next" :total="total">
 								</el-pagination>
 							</div>
 					</div>
-					</el-col>
-
-					
+					</el-col>		
 				</el-col>
-
 			</el-row>
-
-
 	</div>
 </template>
 
 <script>
 	export default {
-		 methods: {
-      handleSizeChange(val) {
-        console.log(`每页 ${val} 条`);
-      },
-      handleCurrentChange(val) {
-        console.log(`当前页: ${val}`);
-      },
-   
-    
-    },
-    //   mounted(){
-    //   	var _this = this;
-    //   	this.ajax.get('http://localhost:8888/test')
-	// 				.then(function(response) {
-	// 					console.log(response);
-	// 					_this.arr1 = response.data;
-	// 				})
-	// 				.catch(function(error) {
-	// 					console.log(error);
-	// 				});
-    //   },
+		methods: {
+      		handleCurrentChange(val) {
+        		//console.log(`当前页: ${val}`);
+        		var _this = this;
+        		this.ajax.get('http://localhost:8888/test',{
+        			params: {
+      					pageSize:10,
+        				val:val
+    				}		
+        		})
+        		.then(function(response) {
+        			_this.arr1 = response.data;
+        		})
+        		.catch(function(error) {
+					console.log(error);
+				});
+      		},
+    	},
+      	mounted(){
+      		this.handleCurrentChange(1);
+      		var _this = this;
+      		this.ajax.get('http://localhost:8888/indextotal')
+			.then(function(response) {
+				_this.total = response.data[0]["COUNT(*)"];
+			})
+			.catch(function(error) {
+				console.log(error);
+			});
+      	},
 		data() {
 			return {
-				arr1: [{
+				arr1: [/*{
 						url: "http://p1-q.mafengwo.net/s12/M00/99/B6/wKgED1vlgj6ASjH2AAityZ1Bmso32.jpeg?imageMogr2%2Fthumbnail%2F%21220x150r%2Fstrip%2Fgravity%2FCenter%2Fcrop%2F%21220x150%2Fquality%2F90",
 						title: "带着爸妈去旅行~日本游记",
 						content: "“ 南疆 之旅，其实就是一场从 天山 山脉奔向 昆仑山 脉，穿越茫茫草原、戈壁沙漠、雪山河谷，邂逅西域多民族古今历史人文之旅。” —— 新疆 自驾行• 南疆 段有感 新疆境内自驾行程（35天...",
@@ -197,7 +200,7 @@
 						username: "记得要微笑",
 						watchnums: "222/26",
 						top_num:"45"
-					},
+					},*/
 				],
 				msg: [{
 						id: "01",
@@ -230,11 +233,8 @@
 						content: "没错，如今这个城市所在的地方，自从清朝以来就被中国称为海参崴，直到1860年《中俄北京条约》的签订。"
 					}
 				],
-				 currentPage1: 5,
-        currentPage2: 5,
-        currentPage3: 5,
-        currentPage4: 4
-
+				 currentPage1: 1,
+				 total:100,
 			};
 		}
 	};

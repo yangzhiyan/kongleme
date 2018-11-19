@@ -1,12 +1,13 @@
 <template>
-  <div class="login"  :style="{width:height.width,height:height.height}">
-    <div class="logindiv">
+  <div class="loginmodul"  :style="{width:height.width,height:height.height}">
+    <div class="logindiv" :style="{marginTop:height.auto}">
       <div class="logo">
         <a href="javascript:void(0)" title="" class="logoimg"></a>
       </div>
       <div class="login-box">
         <div class="login-inner">
           <div class="login-left">
+            <span class="log-err">{{logErr}}</span>
             <div class="login-input">
               <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
                 <el-form-item label="" prop="userid">
@@ -59,7 +60,6 @@
         }
       };
       var checkPhone = (rule, value, callback) => {
-        console.log(value)
         if (value === '') {
           callback(new Error('手机号不能为空'));
         } else {
@@ -74,6 +74,7 @@
       };
       
       return {
+        logErr:"",
         ruleForm2: {
           userid: '',
           passwd: ''
@@ -88,19 +89,43 @@
         },
         height:{
           height:"",
-          width:""
+          width:"",
+          auto:"",
         }
       };
     },
     mounted(){
       this.height.height=document.documentElement.clientHeight+"px";
       this.height.width = document.documentElement.clientWidth+"px";
+      this.height.auto = document.documentElement.clientHeight/2-300+"px";
     },
     methods: {
       submitForm(formName) {
+        var _this = this;
+         _this.logErr = "";
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            alert('submit!');
+            this.ajax.post('http://localhost:8888/login', this.ruleForm2)
+            .then(function (response) {
+              console.log(response.data);
+              var status = response.data;
+              if(status==0){
+                _this.logErr = "用户名错误"
+                console.log("用户名错误");
+              }else if(status == 1){
+                // window.location.href = "/#/"
+                const userid = _this.ruleForm2.userid;
+                const vlogin = true;
+                _this.$router.push({ name: 'IndexLunbo', params: { userid,vlogin }});
+                console.log("登录成功");
+              }else if(status == 2){
+                 _this.logErr = "密码错误";
+                console.log("密码错误");
+              }
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
           } else {
             console.log('error submit!!');
             return false;
@@ -111,9 +136,11 @@
   }
 </script>
 <style>
-  .login {
+  .loginmodul {
     position: relative;
     background-image: url("../../static/img/regback1.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     overflow: hidden;
   }
   .logoimg {
@@ -129,12 +156,20 @@
     background-size: 100% 100%;
     margin: 10px auto;
   }
+  .log-err {
+    color: #f56c6c;
+    position: relative;
+    font-size: 14px;
+    top: -2px;
+    left: 20px;
+  }
+
   .logindiv {
     width: 700px;
     height: 500px;
     /* background-color: rgba(255,168,0,0.8); */
     padding: 20px 0px;
-    margin: 0px auto;
+    margin: 300px auto;
   }
   .logo {
     width: 600px;

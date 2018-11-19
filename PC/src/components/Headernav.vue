@@ -1,19 +1,25 @@
 <template>
   <div class="header">
+      <!-- {{this.vlogin = this.$route.params.vlogin}}
+    {{this.userid = this.$route.params.userid}} -->
+    <div style="display:none">
+        {{this.vlogin = this.$route.params.vlogin}}
+        {{this.userid = this.$route.params.userid}}
+    </div>
       <!-- 头部icon -->
       <div class="header-title"><a class="header-icon" href=""></a></div>
 
       <!-- 头部导航栏 -->
       <div class="header-nav">
             <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" >
-            <el-menu-item index="1" class="nav-under"><a href="https://www.ele.me" target="_blank">首页</a></el-menu-item>
+            <el-menu-item index="1" class="nav-under"><a href="/#/" >首页</a></el-menu-item>
 
-            <el-menu-item index="2" class="nav-under"><a href="https://www.ele.me" target="_blank">目的地</a></el-menu-item>
+            <el-menu-item index="2" class="nav-under"><a href="/#/target" >目的地</a></el-menu-item>
 
-            <el-menu-item index="3" class="nav-under"><a href="https://www.ele.me" target="_blank">旅游攻略</a></el-menu-item>
+            <el-menu-item index="3" class="nav-under"><a href="/#/next">旅游攻略</a></el-menu-item>
 
             <el-submenu index="4" class="nav-over">
-            <template slot="title"><a href="https://www.ele.me" target="_blank">旅行商城</a></template>
+            <template slot="title"><a href="https://www.ele.me" >旅行商城</a></template>
             <el-menu-item index="4-1">自由行</el-menu-item>
             <el-menu-item index="4-2">跟团游</el-menu-item>
             <el-menu-item index="4-3">当地游</el-menu-item>
@@ -35,21 +41,8 @@
             <el-menu-item index="7" class="nav-under"><a href="https://www.ele.me" target="_blank">APP</a></el-menu-item>
              </el-menu>
       </div>
-
-      <!-- 头：右边登录部分1 -->
-      <div v-if="seen1" class="header-login">
-          <ul class="header-right">
-              <li class="h-r"><a class="icon3 icon-sina i-right" href=""></a></li>
-              <li class="h-r"><a class="icon3 icon-qq i-right" href=""></a></li>
-              <li class="h-r"><a class="icon3 icon-wx i-right" href=""></a></li>
-              <li class="h-r"><a class="log-reg login gang i-right" href="">登录</a></li>
-              <li class="h-r gang gang-1">|</li>
-              <li class="h-r"><a class="log-reg regist gang i-right" href="">注册</a></li>
-          </ul>
-      </div>
-
-      <!-- 头：右边登录部分2 -->
-      <div v-if="seen2" class="login-info">
+        <!-- 头：右边登录部分2 -->
+      <div v-if="vlogin" class="login-info">
         <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal">
         <el-submenu index="1">
             <template slot="title" class="right-info message"><span class="el-icon-bell"></span>消息</template>
@@ -62,17 +55,36 @@
 
         <el-submenu index="2">
             <template slot="title" class="right-info"><img class="header-img" src="http://n1-q.mafengwo.net/s12/M00/35/98/wKgED1uqIreAU9QZAAAXHQMBZ74008.png?imageMogr2%2Fthumbnail%2F%2132x32r%2Fgravity%2FCenter%2Fcrop%2F%2132x32%2Fquality%2F90" alt="头像"></template>
-            <el-menu-item index="2-1"><span class="el-icon-news"></span>我的信息</el-menu-item>
-            <el-menu-item index="2-2"><span class="el-icon-edit-outline"></span>写游记</el-menu-item>
-            <el-menu-item index="2-3"><span class="el-icon-share"></span>我的足迹</el-menu-item>
-            <el-menu-item index="2-4"><span class="el-icon-star-off"></span>我的收藏</el-menu-item>
+            <el-menu-item index="2-1"><span class="el-icon-news"></span>欢迎 {{this.userid = this.$route.params.userid}}</el-menu-item>
+            <el-menu-item index="2-2"><span class="el-icon-news"></span>我的信息</el-menu-item>
+           
+            <el-menu-item index="2-3"><span class="el-icon-edit-outline"></span>写游记</el-menu-item>
+            <el-menu-item index="2-4"><span class="el-icon-share"></span>我的足迹</el-menu-item>
+            <el-menu-item index="2-5"><span class="el-icon-star-off"></span>我的收藏</el-menu-item>
             
-            <el-menu-item index="2-5"><span class="el-icon-setting"></span>设置</el-menu-item>
-            <el-menu-item index="2-6"><span class="el-icon-back"></span>退出</el-menu-item>
+            <el-menu-item index="2-6"><span class="el-icon-setting"></span>设置</el-menu-item>
+            <el-menu-item index="2-7"><span class="el-icon-back"></span>退出</el-menu-item>
 
         </el-submenu>
         </el-menu> 
       </div>
+      <!-- 头：右边登录部分1 -->
+      <div v-else  class="header-login">
+          <ul class="header-right">
+              <li class="h-r"><a class="icon3 icon-sina i-right" href=""></a></li>
+              <li class="h-r"><a class="icon3 icon-qq i-right" href=""></a></li>
+              <li class="h-r"><a class="icon3 icon-wx i-right" href=""></a></li>
+              <li class="h-r">
+                <router-link to='/login' class='log-reg login gang i-right'>登录</router-link>
+                </li>
+              <li class="h-r gang gang-1">|</li>
+              <li class="h-r">
+              <router-link to='/reg' class='log-reg regist gang i-right'>注册</router-link>
+                </li>
+          </ul>
+      </div>
+
+    
   </div>
 </template>
 
@@ -80,14 +92,19 @@
 export default {
   name: "Headernav",
   data() {
-        return {
-            seen1:false,
-            seen2:true,
-            activeIndex: "1"
-        };
+    //props:{"vLogin"}
+    return {
+        vlogin:false,
+        userId:"",
+        activeIndex: "1"
+    };
   },
   methods: {
-
+      
+  },
+   updated: function () {
+    this.vlogin = this.$route.params.vlogin;
+    this.userId = this.$route.params.userId;
   }
 };
 </script>
