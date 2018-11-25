@@ -88,7 +88,7 @@
   </div>
 </template>
 
-<script>
+<script sco>
 export default {
   name: "Headernav",
   data() {

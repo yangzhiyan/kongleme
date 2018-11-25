@@ -1,8 +1,8 @@
 {
   "name": "kongleme",
   "version": "1.0.0",
-  "description": "空了么",
-  "author": "第五组",
+  "description": "����ô",
+  "author": "������",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -19,7 +19,6 @@
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
-    
     "babel-core": "^6.22.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.1",

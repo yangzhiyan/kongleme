@@ -32,7 +32,8 @@
 						</div>
 						<div class="local_img">
 							<img src="../../static/img/icon.jpg" />
-							<a href="">立即注册</a>
+							<router-link to="/reg">立即注册</router-link>
+							
 						</div>
 						<div class="local_ibox">
 							<ul>
@@ -153,10 +154,11 @@
 						</div>
 
 						<div class="right_tit1">
-							关西旅行超强攻略——含交通卡推荐、京都町屋推荐
+							<router-link to="/Travelcont">在路上 | 美国加州一号公路自驾住宿全攻略</router-link>
+							
 							<span class="stat"><span class="num">7</span> 浪浪体验过<i class="icon-cart"></i></span>
 						</div>
-						<div class="info">关西是很多人选择日本游玩的第一站，这里是日本传统文化最浓厚的地区，有古老的寺庙、惊艳的艺伎，欲罢不能的美食。如果能够入住传统的京都町屋，就仿佛穿越到了唐朝，体验感更强！</div>
+						<div class="info">沐浴着加州的阳光，沿着蜿蜒的海岸线，“在路上”的乐趣，在这条公路上体现得淋漓尽致。</div>
 						<div class="right_img">
 							<img src="http://n1-q.mafengwo.net/s11/M00/A0/1F/wKgBEFqlBkCAbx7VAAXbtH5Zf6463.jpeg?imageMogr2%2Fthumbnail%2F%21220x130r%2Fgravity%2FCenter%2Fcrop%2F%21220x130%2Fquality%2F100" />
 							<img src="http://b3-q.mafengwo.net/s11/M00/8B/E6/wKgBEFqk7bOAclkxAAjz6k78YP4138.png?imageMogr2%2Fthumbnail%2F%21220x130r%2Fgravity%2FCenter%2Fcrop%2F%21220x130%2Fquality%2F100" />

@@ -6,6 +6,7 @@ import Headernav from '@/components/Headernav'
 import Footer1 from '@/components/Footer1'
 import Next from '@/components/Next'
 import Login from '@/components/Login'
+import Travelcont from '@/components/Travelcont'
 import Register from '@/components/register/Register'
 import Dangdiyou from '@/components/Dangdiyou/Dangdiyou'
 Vue.use(Router)
@@ -49,6 +50,10 @@ export default new Router({
     	name: 'Login',
     	component: Login
 
+    },{
+    	path:'/Travelcont',
+    	name:'Travelcont',
+    	component:Travelcont
     }
     
   ]
