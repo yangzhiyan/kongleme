@@ -8,7 +8,8 @@ import Next from '@/components/Next'
 import Login from '@/components/Login'
 import Travelcont from '@/components/Travelcont'
 import Register from '@/components/register/Register'
-import Dangdiyou from '@/components/Dangdiyou/Dangdiyou'
+import Dangdiyou from '@/components/dangdiyou/Dangdiyou'
+import Details from '@/components/dangdiyou/Details'
 Vue.use(Router)
 
 export default new Router({
@@ -50,7 +51,13 @@ export default new Router({
     	name: 'Login',
     	component: Login
 
-    },{
+    },
+    {
+    	path:'/detail',
+    	name:'Details',
+    	component:Details
+    },
+    {
     	path:'/Travelcont',
     	name:'Travelcont',
     	component:Travelcont

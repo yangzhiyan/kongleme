@@ -157,6 +157,9 @@
 					console.log(error);
 				});
       		},
+      		handleSizeChange(){
+      			
+      		}
     	},
       	mounted(){
       		this.handleCurrentChange(1);
