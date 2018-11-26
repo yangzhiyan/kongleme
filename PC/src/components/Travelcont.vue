@@ -184,11 +184,10 @@
 	//import Headernav from "Headernav";
 	//import Footer1 from "Footer1";
 	export default {
-		//		name: 'Travelcont',
-		//		components: {
-		//			Headernav,
-		//			Footer1
-		//	},
+			name: 'Travelcont',
+			components: {
+				
+			},
 		mounted() {　　},
 		data() {
 			return {

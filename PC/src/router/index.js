@@ -2,13 +2,12 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import IndexLunbo from '@/components/IndexLunbo'
 
-import Headernav from '@/components/Headernav'
-import Footer1 from '@/components/Footer1'
+import Dangdiyou from '@/components/dangdiyou/Dangdiyou'
+import Travelcont from '@/components/Travelcont'
 import Next from '@/components/Next'
 import Login from '@/components/Login'
-import Travelcont from '@/components/Travelcont'
 import Register from '@/components/register/Register'
-import Dangdiyou from '@/components/Dangdiyou/Dangdiyou'
+
 Vue.use(Router)
 
 export default new Router({
@@ -20,26 +19,20 @@ export default new Router({
       component: IndexLunbo
     },
     {
-
-      path: '/header',
-      name: 'Headernav',
-      component: Headernav
+      path: '/next',
+      name: 'Next',
+      component: Next
     },
     {
-    	path:'/localdeals',
-    	name:'Dangdiyou',
-    	component:Dangdiyou
-    },
-    {
-    	path:'/gonglve',
-    	name:'Next',
-    	component:Next
-    },
-    {
-      path: '/ft',
-      name: 'Footer1',
-      component: Footer1
-		 },
+      path: '/local',
+      name: 'Dangdiyou',
+      component: Dangdiyou
+     },
+     {
+      path: '/travelcont',
+      name: 'Travelcont',
+      component: Travelcont
+     },
 		 {
       path: '/reg',
       name: 'Register',
@@ -50,10 +43,6 @@ export default new Router({
     	name: 'Login',
     	component: Login
 
-    },{
-    	path:'/Travelcont',
-    	name:'Travelcont',
-    	component:Travelcont
     }
     
   ]

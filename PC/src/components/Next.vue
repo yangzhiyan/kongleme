@@ -1,10 +1,6 @@
 <template>
 	<div class="localall">
 		<!--导航-->
-		<div class="nav">
-			<Headernav></Headernav>
-		</div>
-
 		<div class="local">
 
 			<el-row :gutter="10">
@@ -32,8 +28,7 @@
 						</div>
 						<div class="local_img">
 							<img src="../../static/img/icon.jpg" />
-							<router-link to="/reg">立即注册</router-link>
-							
+							<a href="">立即注册</a>
 						</div>
 						<div class="local_ibox">
 							<ul>
@@ -57,7 +52,7 @@
 					<div class="localbo">
 						<div class="block">
 
-							<el-carousel height="340px">
+							<el-carousel height="340px"> 
 								<el-carousel-item v-for="item in lunbo" :key="item">
 									<img :src="item" />
 								</el-carousel-item>
@@ -154,11 +149,10 @@
 						</div>
 
 						<div class="right_tit1">
-							<router-link to="/Travelcont">在路上 | 美国加州一号公路自驾住宿全攻略</router-link>
-							
+							关西旅行超强攻略——含交通卡推荐、京都町屋推荐
 							<span class="stat"><span class="num">7</span> 浪浪体验过<i class="icon-cart"></i></span>
 						</div>
-						<div class="info">沐浴着加州的阳光，沿着蜿蜒的海岸线，“在路上”的乐趣，在这条公路上体现得淋漓尽致。</div>
+						<div class="info">关西是很多人选择日本游玩的第一站，这里是日本传统文化最浓厚的地区，有古老的寺庙、惊艳的艺伎，欲罢不能的美食。如果能够入住传统的京都町屋，就仿佛穿越到了唐朝，体验感更强！</div>
 						<div class="right_img">
 							<img src="http://n1-q.mafengwo.net/s11/M00/A0/1F/wKgBEFqlBkCAbx7VAAXbtH5Zf6463.jpeg?imageMogr2%2Fthumbnail%2F%21220x130r%2Fgravity%2FCenter%2Fcrop%2F%21220x130%2Fquality%2F100" />
 							<img src="http://b3-q.mafengwo.net/s11/M00/8B/E6/wKgBEFqk7bOAclkxAAjz6k78YP4138.png?imageMogr2%2Fthumbnail%2F%21220x130r%2Fgravity%2FCenter%2Fcrop%2F%21220x130%2Fquality%2F100" />
@@ -236,24 +230,17 @@
 			</el-row>
 
 		</div>
-		<footer1></footer1>
 	</div>
-
+	
 </template>
 
 <script>
-	import Headernav from '@/components/Headernav';
-	import Footer1 from '@/components/Footer1';
 	export default {
 		name: 'Next',
-		components: {
-			Headernav,
-			Footer1
-		},
 		mounted() {　　},
 		data() {
 			return {
-				arr1: [{
+				arr1: [/*{
 						url: "http://p1-q.mafengwo.net/s12/M00/99/B6/wKgED1vlgj6ASjH2AAityZ1Bmso32.jpeg?imageMogr2%2Fthumbnail%2F%21220x150r%2Fstrip%2Fgravity%2FCenter%2Fcrop%2F%21220x150%2Fquality%2F90",
 						title: "带着爸妈去旅行~日本游记",
 						content: "“ 南疆 之旅，其实就是一场从 天山 山脉奔向 昆仑山 脉，穿越茫茫草原、戈壁沙漠、雪山河谷，邂逅西域多民族古今历史人文之旅。” —— 新疆 自驾行• 南疆 段有感 新疆境内自驾行程（35天...",
@@ -282,7 +269,7 @@
 						username: "记得要微笑",
 						watchnums: "222/26",
 						top_num: "45"
-					},
+					},*/
 				],
 				options: [{
 					value: '选项1',
@@ -349,7 +336,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	* {
 		text-decoration: none;
 		margin: 0px;
@@ -357,21 +344,26 @@
 	}
 	/*导航*/
 	
-	.nav {
+	/* .nav {
 		border-bottom: 1px solid #bdbbbb;
 		height: 60px;
 		width: 100%;
 		margin-bottom: 16px;
-	}
+	} */
 	/*中间*/
-	
-	.local {
+	.localall .el-carousel__container {
+		width: 700px;
+	}
+	.localall .carousel__item {
+		width: 700px;
+	}
+	.localall .local {
 		width: 1000px;
 		margin: 0 auto;
 	}
 	/*左边*/
 	
-	.local_left .localbox {
+	.localall .local_left .localbox {
 		width: 260px;
 		height: 165px;
 		border: 1px solid #ddd;
@@ -379,7 +371,7 @@
 		position: relative;
 	}
 	
-	.local_left .local_item {
+	.localall .local_left .local_item {
 		width: 260px;
 		height: 40px;
 		border-bottom: 1px solid #ddd;
@@ -387,7 +379,7 @@
 		color: #808080;
 	}
 	
-	.local_left .local_item .local_itemleft {
+	.localall .local_left .local_item .local_itemleft {
 		display: inline-block;
 		width: 220px;
 		height: 40px;
@@ -395,7 +387,7 @@
 		padding-left: 8px;
 	}
 	
-	.local_left .local_img {
+	.localall .local_left .local_img {
 		height: 80px;
 		line-height: 80px;
 		color: #FF9D00;
@@ -405,19 +397,19 @@
 		border-bottom: 1px solid #BDBBBB;
 	}
 	
-	.local_left .local_img a {
+	.localall .local_left .local_img a {
 		color: #FF9D00;
 		display: inline-block;
 	}
 	
-	.local_left .local_img img {
+	.localall .local_left .local_img img {
 		width: 150px;
 		height: 50px;
 		margin-top: 20px;
 	}
 	/*要隐藏的数据*/
 	
-	.local_left .local_ibox {
+	.localall .local_left .local_ibox {
 		border: 1px solid #ddd;
 		width: 350px;
 		height: 340px;
@@ -430,13 +422,13 @@
 		z-index: 1000;
 	}
 	
-	.local_left .content {
+	.localall .local_left .content {
 		padding: 2px;
 		color: #BDBBBB;
 		font-size: 14px;
 	}
 	
-	.local_left .content b {
+	.localall .local_left .content b {
 		display: inline-block;
 		font-size: 18px;
 		font-weight: 600;
@@ -445,34 +437,34 @@
 		width: 30px;
 	}
 	
-	.local_left .content a {
+	.localall .local_left .content a {
 		color: #333333;
 	}
 	
-	.local_left .content .cont3 {
+	.localall .local_left .content .cont3 {
 		padding-left: 10px;
 	}
 	/*input*/
 	
-	.local_input {
+	.localall .local_input {
 		margin-top: 24px;
 		border: 2px solid #FF9D00;
 	}
 	/*localdown部分*/
 	
-	.localdown {
+	.localall .localdown {
 		width: 1000px;
 		margin: 0 auto;
 		margin-top: 16px;
 	}
 	
-	.down_left {
+	.localall .down_left {
 		width: 165px;
 		height: 40px;
 		line-height: 40px;
 	}
 	
-	.down_left h3 {
+	.localall .down_left h3 {
 		border-bottom: 1px solid #BDBBBB;
 		height: 34px;
 		width: 100px;
@@ -481,25 +473,25 @@
 		padding-bottom: 4px;
 	}
 	
-	.downoption {
+	.localall .downoption {
 		width: 60px;
 		font-size: 12px;
 		padding-left: 0px;
 	}
 	
-	.downoption1 {
+	.localall .downoption1 {
 		margin-top: 10px;
 		color: #333;
 	}
 	
-	.downoption2 {
+	.localall .downoption2 {
 		position: absolute;
 		top: 50px;
 		left: 68px;
 		width: 60px;
 	}
 	
-	.downoption3 {
+	.localall .downoption3 {
 		position: absolute;
 		top: 50px;
 		left: 130px;
@@ -507,7 +499,7 @@
 	}
 	/*downimg*/
 	
-	.downimg {
+	.localall .downimg {
 		width: 130px;
 		height: 184px;
 		padding-top: 20px;
@@ -525,64 +517,64 @@
 		background-color: #DCDCDC;
 	}
 	
-	.el-select {
+	.localall .el-select {
 		width: 60px;
 	}
 	
-	.el-input--suffix .el-input__inner {
+	.localall .el-input--suffix .el-input__inner {
 		padding: 5px;
 	}
 	
-	.down_right {
+	.localall .down_right {
 		border-bottom: 1px solid #eee;
 		height: 40px;
 		line-height: 40px;
 	}
 	
-	.down_right strong {
+	.localall .down_right strong {
 		color: #333;
 		font-size: 20px;
 		font-weight: 500;
 	}
 	/*downul*/
 	
-	.downul .local_ibox {
+	.localall .downul .local_ibox {
 		margin-top: 70px;
 	}
 	
-	.rightbox {
+	.localall .rightbox {
 		padding-top: 18px;
 	}
 	
-	.type i {
+	.localall .type i {
 		display: inline-block;
 		width: 18px;
 		height: 18px;
 	}
 	
-	.rightbox .type {
+	.localall .rightbox .type {
 		display: inline-block;
 		line-height: 20px;
 		font-size: 12px;
 		color: #666;
 	}
 	
-	.type strong {
+	.localall .type strong {
 		font-weight: normal;
 		color: #ff9d00;
 	}
 	
-	.rightbox .right_tit1 {
+	.localall .rightbox .right_tit1 {
 		margin: 15px 0px;
 		font-size: 20px;
 		color: #333;
 	}
 	
-	.rightbox .right_tit1:hover {
+	.localall .rightbox .right_tit1:hover {
 		color: #FF9D00;
 	}
 	
-	.rightbox .stat {
+	.localall .rightbox .stat {
 		float: right;
 		padding: 0 15px;
 		line-height: 30px;
@@ -593,24 +585,24 @@
 		color: #666;
 	}
 	
-	.rightbox .info {
+	.localall .rightbox .info {
 		color: #808080;
 		font-size: 14px;
 		cursor: pointer;
 	}
 	
-	.right_img {
+	.localall .right_img {
 		border-bottom: 1px solid #DCDCDC;
 		width: 790px;
 		height: 205px;
 	}
 	
-	.right_img img {
+	.localall .right_img img {
 		padding: 30px 6px;
 		cursor: pointer;
 	}
 	
-	.rightkan {
+	.localall .rightkan {
 		display: inline-block;
 		font-size: 12px;
 		color: #999999;
@@ -624,21 +616,21 @@
 	}
 	/*tou*/
 	
-	.tou {
+	.localall .tou {
 		position: relative;
 		top: -40px;
 		font-size: 12px;
 		padding-right: 8px;
 	}
 	
-	.xiao img {
+	.localall .xiao img {
 		width: 22px;
 		height: 22px;
 		border-radius: 50%;
 		display: inline;
 	}
 	
-	.neirong {
+	.localall .neirong {
 		float: left;
 		width: 540px;
 		height: 70px;
@@ -646,7 +638,7 @@
 		padding-top: 40px;
 	}
 	
-	.tupian {
+	.localall .tupian {
 		width: 230px;
 		height: 190px;
 		float: left;

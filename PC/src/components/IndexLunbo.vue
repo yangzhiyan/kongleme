@@ -1,7 +1,7 @@
 <template>
   <div>
+     
     <!--{{this.$route.params.userId}}-->
-    <headernav :userid='userid' :vlogin='vlogin'></headernav>
     <div class="lunbo">
       <el-carousel :interval="5000" arrow="always" trigger="click" height="634px">
         <el-carousel-item v-for="(item,index) in imgurl" :key="index">
@@ -16,7 +16,6 @@
     </div>
     <bkrmlxj></bkrmlxj>
     <myindex></myindex>
-    <footer1></footer1>
   </div>
   
 </template>
@@ -24,16 +23,12 @@
 import IndexSearch from './IndexSearch.vue'
 import Bkrmlxj from './Bkrmlxj'
 import Myindex from './Myindex'
-import Headernav from './Headernav'
-import Footer1 from './Footer1'
 export default {
   name: 'IndexLunbo',
   components: {
     IndexSearch,
     Bkrmlxj,
-    Myindex,
-    Headernav,
-    Footer1
+    Myindex
   },
   data () {
     return {
@@ -73,7 +68,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
   .lunbo{
     position: relative;
     /* top:50px; */

@@ -1,5 +1,4 @@
 <template>
-
 	<div class="strategy">
 			<el-row :gutter="10">
 				<el-col :md="7" class="state_left">
@@ -240,7 +239,7 @@
 	};
 </script>
 
-<style>
+<style scoped>
 	* {
 		list-style-type: none;
 		text-decoration: none;
