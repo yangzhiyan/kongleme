@@ -2,65 +2,64 @@
 	<div class="detail">
 		<detai-choose></detai-choose>
 		<div class="sales-content">
-			
-		
-		<el-tabs type="border-card">
-  			<el-tab-pane label="综合排序">
-  				<div class="list-wrap">
-  					<a href="" title="" class="item" v-for="item in 4" :key="item">
-  						<div class="div-img">
-  							<img src="http://b1-q.mafengwo.net/s11/M00/A0/FA/wKgBEFtgFaaAYrgTABDBkYZI3B8883.gif?imageMogr2%2Fthumbnail%2F%21400x300r%2Fgravity%2FCenter%2Fcrop%2F%21400x300%2Fquality%2F100" alt="" height="150px" width="200px">
-  							<span class="mark-type">
-  								<strong>成都</strong>
-  								<span>门票</span>
-  							</span>
-  						</div>
-  						<div class="details">
-  							<div class="info">
-  								<p>月售1849</p>
-  								<h3>官方电子票 成都大熊猫基地门票 赠电子讲解/萌萌国宝(可购买蜀风雅韵 芙蓉国粹+熊猫联票)</h3>
-  								<div class="s-tag">
-  									<span>憨态可掬</span>
-  									<span>刷码入园</span>
-  									<span>国宝大熊猫</span>
-  									<span>特色变脸演出</span>
-  								</div>	
-  								<p>
-  									<span class="t">店铺: 四川春秋旅行</span>
-  								</p>
-  							</div>
-  							<div class="extra">
-  								<div class="action">
-  									<span class="btn">立即预定</span>
-  								</div>
-  								<span class="price">
-  									<b>￥</b>
-  									<strong>51</strong>
-  									<span>起</span>
-  								</span>
-  								<span class="promo-txt">
-  									<em>促销</em>
-  									<span>每1人减3</span>
-  								</span>
-  							</div>
-  						</div>
-  						<div class="clear">
-  							
-  						</div>
-  					</a>
-  					<div class="fenye">
-						<div class="block1">
-							<el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page.sync="currentPage1" :page-size="10" layout="total, prev, pager, next" :total="total">
-							</el-pagination>
+			<el-tabs type="border-card">
+	  			<el-tab-pane label="综合排序">
+	  				<div class="list-wrap">
+	  					<a href="" title="" class="item" v-for="item in 4" :key="item">
+	  						<div class="div-img">
+	  							<img src="http://b1-q.mafengwo.net/s11/M00/A0/FA/wKgBEFtgFaaAYrgTABDBkYZI3B8883.gif?imageMogr2%2Fthumbnail%2F%21400x300r%2Fgravity%2FCenter%2Fcrop%2F%21400x300%2Fquality%2F100" alt="" height="150px" width="200px">
+	  							<span class="mark-type">
+	  								<strong>成都</strong>
+	  								<span>门票</span>
+	  							</span>
+	  						</div>
+	  						<div class="details">
+	  							<div class="info">
+	  								<p>月售1849</p>
+	  								<h3>官方电子票 成都大熊猫基地门票 赠电子讲解/萌萌国宝(可购买蜀风雅韵 芙蓉国粹+熊猫联票)</h3>
+	  								<div class="s-tag">
+	  									<span>憨态可掬</span>
+	  									<span>刷码入园</span>
+	  									<span>国宝大熊猫</span>
+	  									<span>特色变脸演出</span>
+	  								</div>	
+	  								<p>
+	  									<span class="t">店铺: 四川春秋旅行</span>
+	  								</p>
+	  							</div>
+	  							<div class="extra">
+	  								<div class="action">
+	  									<span class="btn">立即预定</span>
+	  								</div>
+	  								<span class="price">
+	  									<b>￥</b>
+	  									<strong>51</strong>
+	  									<span>起</span>
+	  								</span>
+	  								<span class="promo-txt">
+	  									<em>促销</em>
+	  									<span>每1人减3</span>
+	  								</span>
+	  							</div>
+	  						</div>
+	  						<div class="clear"></div>
+	  					</a>
+	  					<div class="fenye">
+							<div class="block1">
+								<el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page.sync="currentPage1" :page-size="10" layout="total, prev, pager, next" :total="total">
+								</el-pagination>
+							</div>
 						</div>
-					</div>
-  				</div>
-  			</el-tab-pane>
+	  				</div>
+	  			</el-tab-pane>
   			<el-tab-pane label="近期销量优先">近期销量优先</el-tab-pane>
   			<el-tab-pane label="价格">价格
 			</el-tab-pane>
   			<el-tab-pane label="出发时间">出发时间</el-tab-pane>
 		</el-tabs>
+		</div>
+		<div class="clear">
+			
 		</div>
 	</div>
 
@@ -93,8 +92,12 @@
 	}
 </script>
 <style>
+	.clear {
+		clear: both;
+	}
 	.detail {
 		width: 1000px;
+		margin: 0 auto;
 	}
 	.detail .el-tabs__content{
 		padding: 0;
@@ -102,7 +105,6 @@
 	}
 
 	.sales-content {
-		float: left;
     	width: 700px;
     	margin-bottom: 30px;
 	}

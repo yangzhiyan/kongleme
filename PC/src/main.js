@@ -6,15 +6,12 @@ import Vue from 'vue';
 import App from './App';
 import Axios from 'axios';
 import router from './router';
-import Vuex from 'vuex';
-
 Vue.prototype.ajax=Axios
 Vue.config.productionTip = false
 
 Vue.use(ElementUI);
-Vue.use(Vuex);
 
-const store = new Vuex.Store({
+/*const store = new Vuex.Store({
   state: {
     show: true
   },
@@ -23,7 +20,7 @@ const store = new Vuex.Store({
       state.show = false;
     }
   }
-})
+})*/
 
 /* eslint-disable no-new */
 new Vue({

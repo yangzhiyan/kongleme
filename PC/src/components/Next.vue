@@ -28,7 +28,8 @@
 						</div>
 						<div class="local_img">
 							<img src="../../static/img/icon.jpg" />
-							<a href="">立即注册</a>
+							<router-link to="/reg">立即注册</router-link>
+							
 						</div>
 						<div class="local_ibox">
 							<ul>
@@ -149,10 +150,11 @@
 						</div>
 
 						<div class="right_tit1">
-							关西旅行超强攻略——含交通卡推荐、京都町屋推荐
+							<router-link to="/Travelcont">在路上 | 美国加州一号公路自驾住宿全攻略</router-link>
+							
 							<span class="stat"><span class="num">7</span> 浪浪体验过<i class="icon-cart"></i></span>
 						</div>
-						<div class="info">关西是很多人选择日本游玩的第一站，这里是日本传统文化最浓厚的地区，有古老的寺庙、惊艳的艺伎，欲罢不能的美食。如果能够入住传统的京都町屋，就仿佛穿越到了唐朝，体验感更强！</div>
+						<div class="info">沐浴着加州的阳光，沿着蜿蜒的海岸线，“在路上”的乐趣，在这条公路上体现得淋漓尽致。</div>
 						<div class="right_img">
 							<img src="http://n1-q.mafengwo.net/s11/M00/A0/1F/wKgBEFqlBkCAbx7VAAXbtH5Zf6463.jpeg?imageMogr2%2Fthumbnail%2F%21220x130r%2Fgravity%2FCenter%2Fcrop%2F%21220x130%2Fquality%2F100" />
 							<img src="http://b3-q.mafengwo.net/s11/M00/8B/E6/wKgBEFqk7bOAclkxAAjz6k78YP4138.png?imageMogr2%2Fthumbnail%2F%21220x130r%2Fgravity%2FCenter%2Fcrop%2F%21220x130%2Fquality%2F100" />
@@ -240,7 +242,7 @@
 		mounted() {　　},
 		data() {
 			return {
-				arr1: [/*{
+				arr1: [{
 						url: "http://p1-q.mafengwo.net/s12/M00/99/B6/wKgED1vlgj6ASjH2AAityZ1Bmso32.jpeg?imageMogr2%2Fthumbnail%2F%21220x150r%2Fstrip%2Fgravity%2FCenter%2Fcrop%2F%21220x150%2Fquality%2F90",
 						title: "带着爸妈去旅行~日本游记",
 						content: "“ 南疆 之旅，其实就是一场从 天山 山脉奔向 昆仑山 脉，穿越茫茫草原、戈壁沙漠、雪山河谷，邂逅西域多民族古今历史人文之旅。” —— 新疆 自驾行• 南疆 段有感 新疆境内自驾行程（35天...",
@@ -269,7 +271,7 @@
 						username: "记得要微笑",
 						watchnums: "222/26",
 						top_num: "45"
-					},*/
+					},
 				],
 				options: [{
 					value: '选项1',
@@ -337,6 +339,9 @@
 </script>
 
 <style scoped>
+	li {
+		list-style-type: none;
+	}
 	* {
 		text-decoration: none;
 		margin: 0px;

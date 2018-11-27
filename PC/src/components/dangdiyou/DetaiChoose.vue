@@ -149,7 +149,7 @@
 		</div>
 	</div>
 </template>
-<script>
+<script scoped>
 	export default{
 		name:'DetaiChoose',
 		data(){
@@ -242,60 +242,63 @@
 	}
 </script>
 <style>
+	.clear {
+		clear: both;
+	}
 	a{
 		text-decoration: none;
 	}
-	.choose-nav a{
+	.choose .choose-nav a{
 		margin-top: -1px;
     	height: 39px;
     	float: left;
     	padding: 3px 10px 0;
     	color: #333;
 	}
-	.choose-nav{
+	.choose .choose-nav{
 		border-bottom: 1px solid #e5e5e5;
    		background-color: #f4f4f4;
     	line-height: 39px;
     	font-size: 14px;
 	}
-	.hovera{
+	.choose .hovera{
 		text-decoration: underline;
 	}
-	.cur {
+	.choose .cur {
 		padding: 0 10px;
     	border-top: 3px solid #ff9d00;
     	font-weight: bold;
     	background-color: #fff;
     	font-size: 16px;
 	}
-	.choosebox{
+	.choose .choosebox{
 		padding: 0 12px;
 	}
-	.row {
+	.choose .row {
 		padding: 8px 0 8px 80px;
     	line-height: 24px;
     	border-bottom: 1px solid #e5e5e5;
 	}
-	.rowleft{
+	.choose .rowleft{
 		float: left;
 		margin-left: -80px;
 	}
-	.rowcheck{
+	.choose .rowcheck{
 		float: left;
 		width: 850px;
 	}
-	.choosebox .el-checkbox__label{
+	.choose .choosebox .el-checkbox__label{
 		color: #333!important;
 	}
-	.choosebox .el-checkbox__input.is-checked .el-checkbox__inner{
+	.choose .choosebox .el-checkbox__input.is-checked .el-checkbox__inner{
 		background-color: #ff9d00;
 		border-color: #ff9d00;
 	}
-	.checkmore,.checkless {
+	.choose .checkmore,.checkless {
 		text-align: center;
 		margin-top: -1px;
 	}
-	.checkmore a,.checkless a{
+	.choose .checkmore a,.checkless a{
 		width: 100%;
 		height: 100%;
 		display: block;
@@ -304,7 +307,7 @@
     	color: #666;
     	line-height: 18px;
 	}
-	.checkmore a span,.checkless a span{
+	.choose .checkmore a span,.checkless a span{
 		color: #ff9d00;
     	text-decoration: none;
     	display: inline-block;
@@ -312,7 +315,7 @@
     	padding: 0 35px 0 15px;
     	position: relative;
 	}
-	.checkmore a span i ,.checkless a span i{
+	.choose .checkmore a span i ,.checkless a span i{
 		background-image: url('../../../static/img/detail.png');
 		display: inline-block;
 		background-repeat: no-repeat;
@@ -323,17 +326,17 @@
 		top: 10px;
 		right: 15px;
 	}
-	.row-select{
+	.choose .row-select{
 		margin: 0 12px 12px;
     	padding-left: 80px;
     	line-height: 24px;
 	}
-	.row-select>span{
+	.choose .row-select>span{
 		float: left;
     	margin-left: -80px;
     	display: inline;
 	}
-	.select-check{
+	.choose .select-check{
 		float: left;
 	}
 </style>

@@ -28,12 +28,12 @@
                     </div>
                 </div>
                 <dir class="bb-search">
-                    <input @focus="iptfos" class="bb-search-ipt" type="text" name="" id="" placeholder="请输入目的地/产品名称">
-                    <a href="" class="bb-search-btn"><span class="el-icon-search"></span></a>
+                    <input @focus="iptfos" v-modul="input" class="bb-search-ipt" type="text" name="" id="" placeholder="请输入目的地/产品名称">
+                    <a href="javascript:void(0)" class="bb-search-btn" @click="sousuo()"><span class="el-icon-search"></span></a>
                 </dir>
             </div>
             <!-- 头部内容 -->
-            <div class="local-top">
+            <div class="local-top" v-show="flag">
                 <!-- 左边导航条 -->
                 <div class="top-aside">
                     <div class="top-aside-son">
@@ -114,7 +114,7 @@
                 </div>
             </div>
             <!-- 品类导航 -->
-            <div class="slide-row">
+            <div class="slide-row" v-show="flag">
                 <div class="slide-box">
                     <ul class="slide-nav">
                         <li class="slide-nav-item1">
@@ -153,7 +153,7 @@
                 </div>
             </div>
             <!-- 正在热卖 -->
-            <div class="hotsale">
+            <div class="hotsale" v-show="flag">
                 <div class="hotsale-hd">
                     <h2>正在热卖</h2>
                     <span class="first1">境内推荐</span>
@@ -250,7 +250,7 @@
                 </div>
             </div>
             <!-- 度过完美假期 -->
-            <div class="mod-recommend">
+            <div class="mod-recommend" v-show="flag">
                 <!-- 头部 -->
                 <div class="mod-hd hotsale-hd">
                     <h2>度过完美假期</h2>
@@ -301,6 +301,8 @@
                     </ul>
                 </div>
             </div>
+            <Details v-show="flag1">
+            </Details>
         </div>
     </div>
     
@@ -311,18 +313,29 @@
 <script>
 import Headernav from "../Headernav.vue";
 import Footer1 from "../Footer1.vue";
+import Details from "./Details.vue";
 export default {
   name: "Dangdiyou",
   components: {
     Headernav,
-    Footer1
+    Footer1,
+    Details
   },
   data() {
-    return {};
+    return {
+        flag:true,
+        flag1:false,
+        input:""
+    };
   },
   methods:{
       iptfos:function(){
           console.log(this)
+      },
+      sousuo(){
+           this.flag=false;
+        this.flag1=true;
+        
       }
   }
 };
