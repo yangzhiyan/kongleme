@@ -1,9 +1,8 @@
 <template>
-<div>
-    <div class="h-n">
+<div class="local">
+    <!-- <div class="h-n">
         <Headernav></Headernav> 
-    </div>
-    
+    </div> -->
     <div id="all">
         <!-- 头部导航 -->
         <div class="header1">
@@ -201,8 +200,7 @@
                             <a href="">
                                 <div class="img img4"></div>
                                 <div class="caption">
-                                    <h3>早鸟优惠 老司机带你600元寻北漠河（精华2日游+住宿＋门票）</h3>
-                                    单送1晚酒店</h3>
+                                    <h3>早鸟优惠 老司机带你600元寻北漠河（精华2日游+住宿＋门票）单送1晚酒店</h3>
                                     <span class="price"><b>￥519</b>起</span>
                                     <span class="yishou">已售102</span>
                                 </div>
@@ -306,7 +304,7 @@
         </div>
     </div>
     
-<Footer1></Footer1>
+<!-- <Footer1></Footer1> -->
 </div>
 </template>
 
@@ -335,46 +333,46 @@ export default {
   margin: 0;
   padding: 0;
 }
-#all{
+.local #all{
     width: 1000px;
     margin: 0 auto;
     font-size: 12px;
 }
-ul,li,ol {
+.local ul,li,ol {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-a {
+.local a {
   text-decoration: none;
   display: inline-block;
   height: 37px;
   padding: 0 6px;
   color: #666;
 }
-a:hover{
+.local a:hover{
     color: #ff9d00;
 }
-.h-n{
+.local .h-n{
     border: 1px solid rgb(185, 181, 181);
     border-top-color: transparent;
     box-shadow: 1px 1px 1px 1px rgb(238, 237, 237);
 }
-.header1-cont {
+.local .header1-cont {
   height: 37px;
   line-height: 40px;
   font-size: 14px;
   text-align: center;
   margin-left: 235px;
 }
-.header1-cont > li {
+.local .header1-cont > li {
   float: left;
   display: inline;
   margin-right: 10px;
   padding: 0 6px;
 }
 
-.header1-cont li + li:before {
+.local .header1-cont li + li:before {
   content: "";
   position: absolute;
   margin: 13px 0 0 -10px;
@@ -382,11 +380,11 @@ a:hover{
   height: 15px;
   background-color: #e0e0e0;
 }
-.header1-cont .on a {
+.local .header1-cont .on a {
     border-bottom: 3px solid #fc9d27;
     color: #ff9d00;
 }
-.brand-bar{
+.local .brand-bar{
     width: 1000px;
     height: 40px;
     padding: 15px 0;
@@ -394,25 +392,25 @@ a:hover{
     margin: 10px 0 0 0;
     /* border: 1px solid red; */
 }
-.brand-bar .bb-hd{
+.local .brand-bar .bb-hd{
     float: left;
     width: 185px;
     font-size: 24px;
 }
-.brand-bar .bb-hd .bb-icon{
+.local .brand-bar .bb-hd .bb-icon{
     display: inline-block;
     width: 31px;
     height: 32px;
     background: url("../../../static/img/ddy.png") no-repeat -30px -120px;
     margin: 2px 10px 0 0;
 }
-.brand-bar .bb-hd .bb-title>span{
+.local .brand-bar .bb-hd .bb-title>span{
     display: inline-block;
     position: relative;
     top: -6px;
     color: rgb(26, 25, 25);
 }
-.bb-search{
+.local .bb-search{
     width: 660px;
     height: 30px;
     background-color: #ff9d00;
@@ -420,7 +418,7 @@ a:hover{
     padding: 5px;
     overflow: hidden;
 }
-.bb-search .bb-search-ipt{
+.local .bb-search .bb-search-ipt{
     float: left;
     width: 547px;
     height: 20px;
@@ -435,7 +433,7 @@ a:hover{
     box-shadow: inset 0 0 3px rgba(255,157,0,0.9);
 }
 
-.bb-search .bb-search-btn{
+.local .bb-search .bb-search-btn{
     float: left;
     width: 82px;
     height: 40px;
@@ -444,7 +442,7 @@ a:hover{
     border-radius: 0 4px 4px 0;
     margin: -5px -5px -5px 0;
 }
-.bb-search .bb-search-btn>span{
+.local .bb-search .bb-search-btn>span{
     display: inline-block;
     margin-top: 8px;
     width: 23px;
@@ -454,7 +452,7 @@ a:hover{
     font-weight: 900;
 }
 
-.local-top{
+.local .local-top{
     width: 1000px;
     height: 405px;
     margin-bottom: 40px;
@@ -462,19 +460,19 @@ a:hover{
     justify-content: space-between;
     /* border: 1px solid green; */
 }
-.local-top .top-aside{
+.local .local-top .top-aside{
     width: 260px;
     height: 405px;
     display: inline-block;
 }
-.local-top .top-aside>.top-aside-son{
+.local .local-top .top-aside>.top-aside-son{
     width: 256px;
     height: 399px;
     border: 2px solid #ff9d00;
     background-color: #fff;
     padding-bottom: 2px;
 }
-.top-aside-son>.item{
+.local .top-aside-son>.item{
     width: 186px;
     padding: 11px 20px 10px 50px;
     height: 45px;
@@ -484,10 +482,10 @@ a:hover{
     position: relative;
     border-bottom: 1px solid #f1f1f1;
 }
-.top-aside-son>.item-last{
+.local .top-aside-son>.item-last{
     border-bottom: none;
 }
-.item>.item-icon{
+.local .item>.item-icon{
     float: left;
     margin: -25px 0 0 -36px;
     width: 30px;
@@ -497,16 +495,16 @@ a:hover{
     top: 40px;
     left: 45px;
 }
-.item>.item-icon1{
+.local .item>.item-icon1{
     background-position: 0 0;
 }
-.item>.item-icon2{
+.local .item>.item-icon2{
     background-position: 0 -30px;
 }
-.item>.item-icon3{
+.local .item>.item-icon3{
     background-position: 0 -60px;
 }
-.item>.item-icon4{
+.local .item>.item-icon4{
     background-position: 0 -90px;
 }
 .item>.item-icon5{

@@ -16,13 +16,13 @@
 
             <el-menu-item index="2" class="nav-under"><a href="/#/target" >目的地</a></el-menu-item>
 
-            <el-menu-item index="3" class="nav-under"><router-link to='/gonglve' class='router'>旅游攻略</router-link></el-menu-item>
+            <el-menu-item index="3" class="nav-under"><a href="/#/next">旅游攻略</a></el-menu-item>
 
             <el-submenu index="4" class="nav-over">
-            <template slot="title"><a href="https://www.ele.me" >旅行商城</a></template>
-            <el-menu-item index="4-1">自由行</el-menu-item>
+            <template slot="title"><a href="/#/local" >旅行商城</a></template>
+            <el-menu-item index="4-1"><a href="/#/travelcont"> 自由行</a></el-menu-item>
             <el-menu-item index="4-2">跟团游</el-menu-item>
-            <el-menu-item index="4-3"><router-link to='/localdeals' class='router'>当地游</router-link></el-menu-item>
+            <el-menu-item index="4-3"><a href="/#/local">当地游</a></el-menu-item>
             <el-menu-item index="4-4">国内机票</el-menu-item>
             <el-menu-item index="4-4">签证</el-menu-item>
             <el-menu-item index="4-4">保险</el-menu-item>
@@ -88,7 +88,7 @@
   </div>
 </template>
 
-<script sco>
+<script>
 export default {
   name: "Headernav",
   data() {
@@ -120,9 +120,6 @@ export default {
 a{
     text-decoration: none;
 }
-.router{
-    color: #909399;
-}
 .is-opened {
     position: relative;
     top: -6px;
@@ -147,117 +144,120 @@ a{
     background-repeat: no-repeat;
     background-size: 100%;
 }
-.header-nav{
+.header .header-nav{
     float: left;
     width: 600px;
 }
-.el-carousel__item {
+.header .el-carousel__item {
     position: fixed;
     z-index: 1000;
 }
-.header-login{
+.header .header-login{
     width: 185px;
     height: 26px;
     padding: 16px 0px;
     float: right;
 }
-.header-right>.h-r{
+.header .header-right>.h-r{
     display: inline;
 }
-.i-right{
+.header .i-right{
     color: #ff9d00 !important;
 }
-.icon3{
+.header .icon3{
     display: inline-block;
     width: 26px;
     height: 26px;
     background-image: url("../../static/img/kongleme.png");
     background-repeat: no-repeat;
 }
-.icon-sina{
+.header .icon-sina{
     background-position: 0 -50px;
 }
-.icon-sina:hover{
+.header .icon-sina:hover{
     background-position: 0 -80px;
 }
-.icon-qq{
+.header .icon-qq{
     background-position: -30px -50px;
 }
-.icon-qq:hover{
+.header .icon-qq:hover{
     background-position: -30px -80px;
 }
-.icon-wx{
+.header .icon-wx{
     background-position: 0 -165px;
 }
-.icon-wx:hover{
+.header .icon-wx:hover{
     background-position: -30px -165px;
 }
 
-.log-reg{
+.header .log-reg{
     width: 28px;
     height: 16px;
 }
-.log-reg:hover{
+.header .log-reg:hover{
     text-decoration: underline;
 }
-.gang{
+.header .gang{
     display: inline-block;
     font-size: 14px;
     position: relative;
     top:-5px;
 }
-.gang-1{
+.header .gang-1{
     color: gray;
 }
 
-.el-menu--horizontal>.el-menu-item.is-active {
+.header .el-menu--horizontal>.el-menu-item.is-active {
     border-bottom: 3px solid #ff9d00;
     background-color: #ff9d00;
     color: #fff;
 }
-.el-menu--horizontal>.el-menu-item:hover{
+.header .el-menu--horizontal>.el-menu-item:hover{
     color: #ff9d00;
     
 }
-.el-menu.el-menu--horizontal {
+.header .el-menu.el-menu--horizontal {
     border-bottom: none;
 }
-.nav-under{
+.header .nav-under{
     display: inline-block;
     width: 70px;
     text-align: center;
 }
-.nav-under:hover{
+.header .nav-under:hover{
     border-bottom: 3px solid #ff9d00 !important;
 }
-.nav-over:hover{
+.header .nav-over:hover{
     /* border-top: 2px solid #ff9d00 !important; */
     border-left: 1px solid gainsboro;
     border-right: 1px solid gainsboro;    
 }
-.nav-over a:hover{
+.header .nav-over a:hover{
     color: #ff9d00 !important;
+}
+.header .el-submenu__title>a{
+    color: #909399;
 }
 
 /* login-info */
-.login-info{
+.header .login-info{
     float: right;
     width: 220px;
     height: 58px;
     /* border: 1px solid red; */
 }
-.header-img{
+.header .header-img{
     width: 32px;
     height: 32px;
     border-radius: 50%;
 }
-.header-img:hover{
+.header .header-img:hover{
     border: 2px solid #ff9d00;
 }
-.el-submenu__title i:hover{
+.header .el-submenu__title i:hover{
     color: #ff9d00 ;
 }
-.message:hover{
+.header .message:hover{
     color: #ff9d00 !important;
 }
 </style>

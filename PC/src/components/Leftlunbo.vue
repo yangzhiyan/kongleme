@@ -1,23 +1,26 @@
 <template>
-<el-row :gutter="10">
-  <el-col :md="7">
-    <div class="left-lunbo block">
-      <div class="tit">
-        <h2>旅行家专栏</h2>
-        <span><a href="#">专栏首页</a></span>
+<div class="leftlunbo">
+  <el-row :gutter="10">
+    <el-col :md="7">
+      <div class="left-lunbo block">
+        <div class="tit">
+          <h2>旅行家专栏</h2>
+          <span><a href="#">专栏首页</a></span>
+        </div>
+        <el-carousel height="260px">
+          <el-carousel-item v-for="item in msg" :key="item.id">
+            <img :src="item.imgsrc" />
+            <div class="fontdiv">
+              <p><a>{{item.title}}</a></p>
+              <span>{{item.content}}</span>
+            </div>
+          </el-carousel-item>
+        </el-carousel>
       </div>
-      <el-carousel height="260px">
-        <el-carousel-item v-for="item in msg" :key="item.id">
-          <img :src="item.imgsrc" />
-          <div class="fontdiv">
-            <p><a>{{item.title}}</a></p>
-            <span>{{item.content}}</span>
-          </div>
-        </el-carousel-item>
-      </el-carousel>
-    </div>
-  </el-col>
-</el-row>
+    </el-col>
+  </el-row>
+</div>
+
   
 </template>
 
@@ -64,22 +67,22 @@
 </script>
 
 
-<style>
-  a{
+<style scoped>
+  .leftlunbo a{
     color: rgb(100, 98, 98);
     text-decoration: none;
   }
-  .tit {
+  .leftlunbo .tit {
     text-align: left;
   }
-  .tit h2 {
+  .leftlunbo .tit h2 {
     display: inline-block;
     font-size: 18px;
     font-weight: 100;
     color: #333;
     padding: 0px 5px 14px;
   }
-  .tit a {
+  .leftlunbo .tit a {
     color: rgb(100, 98, 98);
     text-decoration: underline;
     font-size: 14px;
@@ -88,35 +91,35 @@
     left: 100px;
 
   }
-  .left-lunbo {
+  .leftlunbo .left-lunbo {
     width: 260px;
   }
-  .left-lunbo .el-carousel__button {
+  .leftlunbo .left-lunbo .el-carousel__button {
     width: 15px;
     height: 8px;
     border-radius: 4px;
   }
-  .left-lunbo .el-carousel__indicators {
+  .leftlunbo .left-lunbo .el-carousel__indicators {
     position: relative;
     top: -150px;
     left: 270px;
   }
-  .left-lunbo .fontdiv {
+  .leftlunbo .left-lunbo .fontdiv {
     text-align: left;
   }
-  .left-lunbo .fontdiv p {
+  .leftlunbo .left-lunbo .fontdiv p {
     font-size: 16px;
     font-weight: 100;
     padding: 6px 0px;
     text-align: left;
   }
-  .left-lunbo .fontdiv p a {
+  .leftlunbo .left-lunbo .fontdiv p a {
     color: black;
   }
-  .left-lunbo .fontdiv p a:hover {
+  .leftlunbo .left-lunbo .fontdiv p a:hover {
     text-decoration: underline;
   }
-  .left-lunbo .fontdiv span {
+  .leftlunbo .left-lunbo .fontdiv span {
     height: 60px;
     line-height: 20px;
     font-size: 14px;

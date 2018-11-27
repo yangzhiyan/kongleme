@@ -6,8 +6,9 @@
       </div>
       <div class="login-box">
         <div class="login-inner">
+          <!-- <div class="clear"></div> -->
           <div class="login-left">
-            <span class="log-err">{{logErr}}</span>
+            <span class="log-err">{{logErr}}<a href="/#/reg" v-if="showreg"> 去注册</a></span>
             <div class="login-input">
               <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
                 <el-form-item label="" prop="userid">
@@ -41,7 +42,7 @@
           </div> 
           <div class="login-right">    
           </div>
-          <div class="clear"></div>
+          <!-- <div class="clear"></div> -->
         </div>
       </div> 
     </div>
@@ -74,6 +75,7 @@
       };
       
       return {
+        showreg:false,
         logErr:"",
         ruleForm2: {
           userid: '',
@@ -98,6 +100,11 @@
       this.height.height=document.documentElement.clientHeight+"px";
       this.height.width = document.documentElement.clientWidth+"px";
       this.height.auto = document.documentElement.clientHeight/2-300+"px";
+      //  console.log(this.store.state.show);
+      // this.store.commit('increment');
+    },
+    beforeCreate(){
+      
     },
     methods: {
       submitForm(formName) {
@@ -110,7 +117,8 @@
               console.log(response.data);
               var status = response.data;
               if(status==0){
-                _this.logErr = "用户名错误"
+                _this.showreg = true;
+                _this.logErr = "没有该用户,";
                 console.log("用户名错误");
               }else if(status == 1){
                 // window.location.href = "/#/"
@@ -135,7 +143,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   .loginmodul {
     position: relative;
     background-image: url("../../static/img/regback1.png");
@@ -163,7 +171,12 @@
     top: -2px;
     left: 20px;
   }
-
+  .log-err a {
+    color: #f56c6c;
+  }
+  .log-err a:hover{
+    text-decoration: underline;
+  }
   .logindiv {
     width: 700px;
     height: 500px;
@@ -182,6 +195,7 @@
   }
   .login-inner {
     width: 600px;
+    height: 340px;
     padding-top: 26px;
     background-color: #fff;
     box-shadow: 0 3px 3px rgba(0,0,0,.4);
